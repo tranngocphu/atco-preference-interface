@@ -9,16 +9,16 @@
 	65 Nanyang Drive, Nanyang Technological University,
 	North Spine, Block N3.2-B3M-10, 637460 Singapore
  * -----
- * Last Modified: Thursday, 23rd April 2020 10:27:21 pm
+ * Last Modified: Thursday, 23rd April 2020 10:30:07 pm
  * Modified By: Phu N. Tran
  * -----
  */
 
 
 /** GLOBAL CONSTANTS */
-
-const PAPER_WIDTH  = 800;
-const PAPER_HEIGHT = 800;
+const PAPER_SIZE = 800;
+const PAPER_WIDTH  = PAPER_SIZE;
+const PAPER_HEIGHT = PAPER_SIZE;
  
 
 /*************************************************/
