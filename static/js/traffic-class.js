@@ -9,7 +9,7 @@
 	65 Nanyang Drive, Nanyang Technological University,
 	North Spine, Block N3.2-B3M-10, 637460 Singapore
  * -----
- * Last Modified: Thursday, 23rd April 2020 11:59:50 pm
+ * Last Modified: Friday, 24th April 2020 12:38:43 am
  * Modified By: Phu N. Tran
  * -----
  */
@@ -54,8 +54,8 @@ class Aircraft {
 		this.name = name;
 		this.x = x;
 		this.y = y;
-		this.dir_x = x;
-		this.dir_y = y;
+		this.dir_x = dir_x;
+		this.dir_y = dir_y;
 	}
 
 }
