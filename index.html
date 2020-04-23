@@ -7,20 +7,19 @@
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <script type="text/javascript" src="static/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="static/vendor/paper-full.js"></script>
-
-
 </head>
 
 <body>
 
+    <canvas id="airspace" resize></canvas>
 
-
-
-
+    <script type="text/javascript" src="static/vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="static/vendor/paper-full.js"></script>
+    <script type="text/javascript">
+        paper.install(window);
+        paper.setup('airspace');
+    </script>
+    <script type="text/javascript" src="static/js/class.js"></script>
+    <script type="text/javascript" src="static/js/test.js"></script>
 </body>
-
 </html>
