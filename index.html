@@ -11,14 +11,17 @@
 
 <body>
 
-    <canvas id="airspace" resize></canvas>
+    <div style="text-align:center">
+        <canvas style="background-color:yellow;" id="myCanvas"></canvas> 
+    </div>
 
     <script type="text/javascript" src="static/vendor/jquery.min.js"></script>
     <script type="text/javascript" src="static/vendor/paper-full.js"></script>
     <script type="text/javascript">
         paper.install(window);
-        paper.setup('airspace');
+        paper.setup('myCanvas');
     </script>
+    <script type="text/javascript" src="static/js/config.js"></script>
     <script type="text/javascript" src="static/js/class.js"></script>
     <script type="text/javascript" src="static/js/test.js"></script>
 </body>
