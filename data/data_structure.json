@@ -1,0 +1,40 @@
+{
+    "waypoint": {
+        "wp_name_1" : {
+            "x" : 0.212,
+            "y" : 0.985 
+        },
+        "wp_name_2" : {
+            "x" : 0.259,
+            "y" : 0.123 
+        },
+    },    
+
+    "airway" : {
+        "airway_name_1" : {
+            "start" : "name_of_start_wp_1",
+            "end" : "name_of_end_wp_1" 
+        },
+        "airway_name_2" : {
+            "start" : "name_of_start_wp_2",
+            "end" : "name_of_end_wp_2" 
+        }
+    },
+
+    "aircraft" : [
+        {
+            "ac_id" : "id_of_ac_1",
+            "x" : 0.256, // location x
+            "y" : 0.589, // location y
+            "dir_x" : 0.97, // x-dir (heading)  NOTE: dir_x** 2 + dir_y**2 = 1
+            "dir_y" : 0.25 // y-dir (heading)
+        },
+        {
+            "ac_id" : "id_of_ac_2",
+            "x" : 0.256, // location x
+            "y" : 0.589, // location y
+            "dir_x" : 0.97, // x-dir (heading)  NOTE: dir_x** 2 + dir_y**2 = 1
+            "dir_y" : 0.25 // y-dir (heading)
+        }
+    ]    
+}
