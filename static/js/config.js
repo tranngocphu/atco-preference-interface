@@ -9,18 +9,19 @@
 	65 Nanyang Drive, Nanyang Technological University,
 	North Spine, Block N3.2-B3M-10, 637460 Singapore
  * -----
- * Last Modified: Thursday, 23rd April 2020 10:39:33 pm
+ * Last Modified: Thursday, 23rd April 2020 11:04:33 pm
  * Modified By: Phu N. Tran
  * -----
  */
 
 
-/** GLOBAL CONSTANTS */
+/** GLOBAL CONSTANTS  */
 const PAPER_SIZE = 900;
 const PAPER_WIDTH  = PAPER_SIZE;
 const PAPER_HEIGHT = PAPER_SIZE;
 const BG_COLOR = "#292929";
- 
+const PY2JS_SCALE = PAPER_SIZE; 
+
 
 /*************************************************/
 
@@ -36,7 +37,7 @@ let bg = new Path.Rectangle({
     point: [0, 0],
     size: [PAPER_WIDTH, PAPER_HEIGHT],
     fillColor: BG_COLOR,
-    strokeColor: '',
+    strokeColor: "",
     strokeWidth: 0,
     visible: true
 });
