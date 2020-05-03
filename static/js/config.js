@@ -9,10 +9,12 @@
 	65 Nanyang Drive, Nanyang Technological University,
 	North Spine, Block N3.2-B3M-10, 637460 Singapore
  * -----
- * Last Modified: Thursday, 23rd April 2020 11:04:33 pm
+ * Last Modified: Sunday, 3rd May 2020 4:15:50 pm
  * Modified By: Phu N. Tran
  * -----
  */
+
+const DEBUG = true;
 
 
 /** GLOBAL CONSTANTS  */
@@ -32,7 +34,19 @@ canvas.height = PAPER_HEIGHT;
 view.Size = [PAPER_WIDTH, PAPER_HEIGHT];
 
 
+// Define all layers
+let background_layer = new Layer();
+let waypoint_layer   = new Layer();
+let airway_layer     = new Layer();
+let aircraft_layer   = new Layer();
+let graphic_layer    = new Layer();
+let text_layer       = new Layer();
+
+if (DEBUG) 
+    console.log(project.layers);
+
 // Add a rectangle as a bg layer
+background_layer.activate();
 let bg = new Path.Rectangle({
     point: [0, 0],
     size: [PAPER_WIDTH, PAPER_HEIGHT],
