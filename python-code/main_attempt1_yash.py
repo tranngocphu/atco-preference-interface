@@ -1,6 +1,6 @@
 import numpy as np 
 import pandas as pd 
-from classLib import *
+from classLib_yash import *
 import random
 import matplotlib.pyplot as plt
 
