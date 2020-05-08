@@ -54,7 +54,7 @@ class Airways:
         self.yt_min = self.xt_min*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
         self.yt_max = self.xt_max*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
         self.locations=[]
-        for i in np.arange(self.xt_min,self.xt_max,0.05):
+        for i in np.linspace(self.xt_min,self.xt_max,15):
             yt = np.round(i,2)*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
             self.locations.append([np.round(i,2),yt])
 
