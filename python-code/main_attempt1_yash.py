@@ -5,6 +5,7 @@ import random
 import matplotlib.pyplot as plt
 
 
+
 randompoints= [] # generating random point between 0 and 1
 for i in range(1000): 
     a=[random.random(), random.random()]
@@ -16,12 +17,12 @@ for j in range(len(randompoints)):
     for k in range(j+1,len(randompoints)):
         s=np.linalg.norm(np.array(randompoints[j])-np.array(randompoints[k])) # not efficient way to claculate distance of one point from all others
         a.append(s)
-    if all(i>0.2 for i in a):
+    if all(i>0.15 for i in a):
         allWaypoint.append(randompoints[j])
 print('no of waypoints:', len(allWaypoint))
 waypointList = allWaypoint[:15] #need 15 waypoints
 print(waypointList)
-print('length of waypoint list:',len(waypointList))
+print(len(waypointList))
 print("^^^")
 print()
 # for i in range(len(waypointList)):
@@ -38,6 +39,8 @@ for i in range(len(waypointList)):
 # print(wps[0].name)
 
 
+
+  #list containing airways class elements
 ##################################    AIRWAYS  #####################################################
 # Here, airway is a subclass of wayPoint class and every 
 wayPointInfo=[]
@@ -47,8 +50,7 @@ for i in range(len(wpNameList)):
 airwayNames=np.arange(len(wpNameList))
 airway_list=[]
 for i in range(len(waypointList)-2):
-    airway_list.append(airways(airwayNames[i],random.sample(wayPointInfo,2)))  #list containing airways class elements
-
+    airway_list.append(Airways(airwayNames[i],random.sample(wayPointInfo,2)))
 ################################# AIRCRAFT ######################################
 
 ac_names = np.arange(10)

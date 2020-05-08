@@ -56,9 +56,10 @@ class Airways:
         self.locations=[]
         for i in np.linspace(self.xt_min,self.xt_max,15):
             yt = np.round(i,2)*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
-            self.locations.append([np.round(i,2),yt])
+            self.locations.append([np.round(i,2),np.round(yt,2)])
 
         return self.locations
+             
     
 
 
