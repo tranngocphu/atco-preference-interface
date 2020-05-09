@@ -30,6 +30,11 @@ const WAYPOINT_SYMBOL_URL = 'static/img/waypoint.png';
 const WAYPOINT_SYMBOL_SCALE = 0.1;
 const AIRWAY_LINE_WIDTH = 0.5;
 const AIRWAY_LINE_COLOR = '#8f8f8f';
+const AIRCRAFT_SYMBOL_SIZE = 5;
+const AIRCRAFT_SYMBOL_COLOR = '#ffffff';
+const AIRCRAFT_PROJECTION_LENGTH = 20;
+const AIRCRAFT_PROJECTION_WIDTH = 1.5;
+const AIRCRAFT_PROJECTION_COLOR = '#ffffff';
 
 
 /*************************************************/

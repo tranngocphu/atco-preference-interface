@@ -20,6 +20,11 @@
  *  This extends the Raster class of Paperjs. * 
  */
 class WaypointSymbol extends Raster {
+    /**
+     * 
+     * @param {*} x 
+     * @param {*} y 
+     */
     constructor(x, y) {
         waypoint_layer.activate();
         super({
@@ -35,6 +40,11 @@ class WaypointSymbol extends Raster {
  * This extends the Path class of Paperjs.
  */
 class AirwayLine extends Path.Line {
+    /**
+     * 
+     * @param {*} start 
+     * @param {*} end 
+     */
     constructor(start, end) {
         airway_layer.activate();
         super({
@@ -51,10 +61,18 @@ class AirwayLine extends Path.Line {
  * This extends the Path.Circle of Paperjs
  */
 class AircraftLocationSymbol extends Path.Circle {
+    /**
+     * 
+     * @param {*} x 
+     * @param {*} y 
+     */
     constructor(x, y) {
         aircraft_layer.activate();
         super({
-
+            center: [x, y],
+            radius: AIRCRAFT_SYMBOL_SIZE,
+            strokeWidth: 0,
+            fillColor: AIRCRAFT_SYMBOL_COLOR,            
         })
     }
 }
@@ -64,9 +82,18 @@ class AircraftLocationSymbol extends Path.Circle {
  * This extends the Path.Line of Paperjs
  */
 class AircraftProjectionLine extends Path.Line {
-    constructor() {
+    /**
+     * 
+     * @param {*} start 
+     * @param {*} end 
+     */
+    constructor(start, end) {
+        aircraft_layer.activate();
         super({
-            
+            from: start,
+            to: end,
+            strokeColor: AIRCRAFT_PROJECTION_COLOR,
+            strokeWidth: AIRCRAFT_PROJECTION_WIDTH    
         })
     }
 }
