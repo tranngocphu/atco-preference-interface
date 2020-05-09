@@ -15,22 +15,12 @@
  */
 
 
-class WaypointSymbol {
-    constructor(x, y, layer) {
-        this.x = x;
-        this.y = y;        
-        this.symbol = this.draw_waypoint();
-    }
-
-    draw_waypoint() {
-        return false;
-    }
-
-    hide() {
-        this.symbol.visible = false;
-    }
-
-    show() {
-        this.symbol.visible = true;       
+class WaypointSymbol extends Raster {
+    constructor(x, y) {
+        super({
+            source: WAYPOINT_SYMBOL_URL,
+            position: [x,y]
+        })
+        this.scale(WAYPOINT_SYMBOL_SCALE)
     }
 }

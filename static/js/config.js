@@ -21,8 +21,11 @@ const DEBUG = true;
 const PAPER_SIZE = 900;
 const PAPER_WIDTH  = PAPER_SIZE;
 const PAPER_HEIGHT = PAPER_SIZE;
+const CENTER = [PAPER_WIDTH/2, PAPER_HEIGHT/2];
 const BG_COLOR = "#292929";
 const PY2JS_SCALE = PAPER_SIZE; 
+const WAYPOINT_SYMBOL_URL = 'static/img/waypoint.png';
+const WAYPOINT_SYMBOL_SCALE = 0.1;
 
 
 /*************************************************/
@@ -32,7 +35,6 @@ let canvas = document.getElementById('myCanvas');
 canvas.width = PAPER_WIDTH;
 canvas.height = PAPER_HEIGHT;
 view.Size = [PAPER_WIDTH, PAPER_HEIGHT];
-
 
 // Define all layers
 let background_layer = new Layer();
