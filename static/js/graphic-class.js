@@ -15,12 +15,33 @@
  */
 
 
+/**
+ *  Define the graphic symbol of a waypoint.
+ *  This extends the Raster class of Paperjs. * 
+ */
 class WaypointSymbol extends Raster {
     constructor(x, y) {
+        waypoint_layer.activate();
         super({
             source: WAYPOINT_SYMBOL_URL,
             position: [x,y]
         })
         this.scale(WAYPOINT_SYMBOL_SCALE)
+    }
+}
+
+/**
+ * Define the graphic line of an airway segment
+ * This extends the Path class of Paperjs.
+ */
+class AirwayLine extends Path.Line {
+    constructor(start, end) {
+        airway_layer.activate();
+        super({
+            from: start,
+            to: end,
+            strokeColor: AIRWAY_LINE_COLOR,
+            strokeWidth: AIRWAY_LINE_WIDTH
+        })
     }
 }

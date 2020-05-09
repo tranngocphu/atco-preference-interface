@@ -24,8 +24,12 @@ const PAPER_HEIGHT = PAPER_SIZE;
 const CENTER = [PAPER_WIDTH/2, PAPER_HEIGHT/2];
 const BG_COLOR = "#292929";
 const PY2JS_SCALE = PAPER_SIZE; 
+
+/** GRAPHIC SETTINGS  */
 const WAYPOINT_SYMBOL_URL = 'static/img/waypoint.png';
 const WAYPOINT_SYMBOL_SCALE = 0.1;
+const AIRWAY_LINE_WIDTH = 0.5;
+const AIRWAY_LINE_COLOR = '#8f8f8f';
 
 
 /*************************************************/
@@ -57,3 +61,5 @@ let bg = new Path.Rectangle({
     strokeWidth: 0,
     visible: true
 });
+
+
