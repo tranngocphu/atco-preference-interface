@@ -45,3 +45,28 @@ class AirwayLine extends Path.Line {
         })
     }
 }
+
+/**
+ * Define the graphic symbol of an aircraft
+ * This extends the Path.Circle of Paperjs
+ */
+class AircraftLocationSymbol extends Path.Circle {
+    constructor(x, y) {
+        aircraft_layer.activate();
+        super({
+
+        })
+    }
+}
+
+/**
+ * Define the graphic symbol of an aircraft path projection
+ * This extends the Path.Line of Paperjs
+ */
+class AircraftProjectionLine extends Path.Line {
+    constructor() {
+        super({
+            
+        })
+    }
+}

@@ -57,7 +57,6 @@ let bg = new Path.Rectangle({
     point: [0, 0],
     size: [PAPER_WIDTH, PAPER_HEIGHT],
     fillColor: BG_COLOR,
-    strokeColor: "",
     strokeWidth: 0,
     visible: true
 });

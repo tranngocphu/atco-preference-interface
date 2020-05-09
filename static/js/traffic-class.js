@@ -26,7 +26,13 @@ class Waypoint {
 		this.y = y;
 		this.position = [x,y];
 		this.symbol = new WaypointSymbol(x, y);
+		this.airways = [];
 	}
+
+	add_airway(airway) {
+		this.airways.push(airway);
+	}
+	
 }
 
 
@@ -35,12 +41,20 @@ class Waypoint {
  */
 
 class Airway {	
+	/**
+	 * 
+	 * @param {string} name name of the airway
+	 * @param {WaypointObject} start_wp start waypoint
+	 * @param {WaypointObject} end_wp end waypoint
+	 */
 	constructor(name, start_wp, end_wp) {
 		this.name = name;		
-		this.segments = [start_wp, start_wp]; // segments array, each segment is a waypoint
+		this.waypoints = [start_wp, start_wp]; // segments array, each segment is a waypoint
 		this.start = start_wp.position;
 		this.end   = end_wp.position;
 		this.line  = new AirwayLine(start_wp.position, end_wp.position);
+		start_wp.add_airway(this);
+		end_wp.add_airway(this);
 	}	
 }
 

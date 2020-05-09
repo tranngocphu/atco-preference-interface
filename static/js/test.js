@@ -83,3 +83,26 @@ let data = {
     },  
 }
 
+
+let wp_names = ['wp1', 'wp2', 'wp3', 'wp4', 'wp5', 'wp6', 'wp7', 'wp8', 'wp9', 'wp10'];
+let aw_names = ['aw1', 'aw2', 'aw3', 'aw4', 'aw5'];
+
+
+let waypoints = [];
+let airways = [];
+
+for (i=0; i<wp_names.length; i++ ) {
+    let name = wp_names[i];
+    // x = data.waypoint[name].x * PY2JS_SCALE;
+    // y = data.waypoint[name].y * PY2JS_SCALE;
+    x = Math.random() * PY2JS_SCALE;
+    y = Math.random() * PY2JS_SCALE;
+    waypoints[name] = new Waypoint(name, x, y);    
+}
+
+for (i=0; i<aw_names.length; i++) {
+    let name = aw_names[i];
+    let start_wp_name = data.airway[name].start;
+    let end_wp_name = data.airway[name].end;
+    airways[name] = new Airway(name, waypoints[start_wp_name], waypoints[end_wp_name]);
+}
