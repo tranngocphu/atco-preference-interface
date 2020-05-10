@@ -49,11 +49,17 @@ for i in range(len(wpNameList)):
 
 airwayNames=np.arange(len(wpNameList))
 airway_list=[]
+sampled_airways=[]
 for i in range(len(waypointList)-2):
-    airway_list.append(Airways(airwayNames[i],random.sample(wayPointInfo,2)))
+    points = random.sample(wayPointInfo,2)
+    airway_list.append(Airways(airwayNames[i],points))
+    sampled_airways.append(points)
+        
 ################################# AIRCRAFT ######################################
 
-ac_names = np.arange(10)
-ac_info=[]
-for i in range(len(ac_names)):
-    ac_info.append(aircraft(ac_names[i],random.sample(wayPointInfo,2)))
+ac_per_scenario =8  # just a random number to have no of aircraft in one scenario
+aircraftList=[]
+aircraft_name=np.arange(ac_per_scenario)
+for i in range(ac_per_scenario):
+    aircraft= Aircraft(aircraft_name[i],random.choice(sampled_airways))
+    aircraftList.append(aircraft)

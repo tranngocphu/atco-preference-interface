@@ -61,17 +61,34 @@ class Airways:
         return self.locations
              
     
-
-
-class aircraft:
-    def __init__(self, name, points):
+class Aircraft:
+    def __init__(self, name, points): #the points here are form the list "sampled_airways" in the main_attmept1 file
         self.name= name 
+        self.startName= points[0][0]
+        self.endName= points[1][0]
         self.start_x= points[0][1][0]
         self.start_y= points[0][1][1]
         self.end_x= points[1][1][0]
         self.end_y = points[1][1][1]
+        self.start_wp_x= points[0][1][0]
+        self.start_wp_y= points[0][1][1]
+        self.end_wp_x= points[1][1][0]
+        self.end_wp_y = points[1][1][1]
         self.start = np.array([self.start_x,self.start_y])
         self.end = np.array([self.end_x, self.end_y])
         self.segment = np.linalg.norm(self.start - self.end)
         self.dir_x = (self.end_x - self.start_x) / self.segment
         self.dir_y = (self.end_y - self.start_y) / self.segment
+        
+    def location(self):
+        self.xt_min = self.start_wp_x
+        self.xt_max = self.end_wp_x
+        self.slope = (self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)
+        self.yt_min = self.xt_min*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
+        self.yt_max = self.xt_max*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
+        self.locations=[]
+        for i in np.linspace(self.xt_min,self.xt_max,15):
+            yt = np.round(i,2)*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
+            self.locations.append([np.round(i,2),np.round(yt,2)])
+
+        return self.locations
