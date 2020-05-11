@@ -25,13 +25,14 @@ class WaypointSymbol extends Raster {
      * @param {*} x 
      * @param {*} y 
      */
-    constructor(x, y) {
+    constructor(name, x, y) {
         waypoint_layer.activate();
         super({
             source: WAYPOINT_SYMBOL_URL,
             position: [x,y]
         })
-        this.scale(WAYPOINT_SYMBOL_SCALE)
+        this.scale(WAYPOINT_SYMBOL_NORMAL);
+        this.name = name;
     }
 }
 
@@ -66,14 +67,15 @@ class AircraftLocationSymbol extends Path.Circle {
      * @param {*} x 
      * @param {*} y 
      */
-    constructor(x, y) {
+    constructor(name, x, y) {
         aircraft_layer.activate();
         super({
             center: [x, y],
             radius: AIRCRAFT_SYMBOL_SIZE,
             strokeWidth: 0,
             fillColor: AIRCRAFT_SYMBOL_COLOR,            
-        })
+        });
+        this.name = name;        
     }
 }
 
@@ -87,13 +89,69 @@ class AircraftProjectionLine extends Path.Line {
      * @param {*} start 
      * @param {*} end 
      */
-    constructor(start, end) {
+    constructor(name, start, end) {
         aircraft_layer.activate();
         super({
             from: start,
             to: end,
             strokeColor: AIRCRAFT_PROJECTION_COLOR,
-            strokeWidth: AIRCRAFT_PROJECTION_WIDTH    
+            strokeWidth: AIRCRAFT_PROJECTION_WIDTH,
+        });        
+        this.name = name;
+        this.angle = function() {
+            let diff = this.lastSegment.point.subtract(this.firstSegment.point);
+            return diff.angle                     
+        }
+    }    
+}
+
+
+/**
+ * Define the graphic symbol of an aircraft vectoring maneuver
+ * This extends the Path.Line of Paperjs
+ */
+class AircraftVectoringLine extends Path.Line {
+    /**
+     * 
+     * @param {*} start 
+     * @param {*} end 
+     */
+    constructor(name, start, end) {
+        maneuver_layer.activate();
+        super({
+            from: start,
+            to: end,
+            strokeColor: AIRCRAFT_VECTORING_COLOR,
+            strokeWidth: AIRCRAFT_VECTORING_WIDTH    
         })
+        this.name = name;
+        this.visible = false;
+        this.angle = function() {
+            let diff = this.lastSegment.point.subtract(this.firstSegment.point);
+            return diff.angle                    
+        }
+    }
+}
+
+
+/**
+ * Define the graphical text of maneuver information
+ * This extends the Path.Line of Paperjs
+ */
+class AircraftVectoringText extends PointText {
+    /**
+     * 
+     * @param {*} start 
+     * @param {*} end 
+     */
+    constructor() {
+        text_layer.activate();
+        super({
+            point: [0,0],
+            content: '',
+            fillColor: TEXT_COLOR,
+            fontFamily: 'sans-serif',
+            fontSize: TEXT_SIZE            
+        })        
     }
 }

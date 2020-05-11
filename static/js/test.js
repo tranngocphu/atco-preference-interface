@@ -89,10 +89,6 @@ let aw_names = ['aw1', 'aw2', 'aw3', 'aw4', 'aw5'];
 let ac_names = ['ac1', 'ac2', 'ac3', 'ac4', 'ac5', 'ac6', 'ac7', 'ac8', 'ac9', 'ac10'];
 
 
-let waypoints = [];
-let airways = [];
-let aircrafts = [];
-
 for (i=0; i<wp_names.length; i++ ) {
     let name = wp_names[i];
     // x = data.waypoint[name].x * PY2JS_SCALE;

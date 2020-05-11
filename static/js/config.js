@@ -27,14 +27,19 @@ const PY2JS_SCALE = PAPER_SIZE;
 
 /** GRAPHIC SETTINGS  */
 const WAYPOINT_SYMBOL_URL = 'static/img/waypoint.png';
-const WAYPOINT_SYMBOL_SCALE = 0.1;
+const WAYPOINT_SYMBOL_NORMAL = 0.1;
+const WAYPOINT_SYMBOL_LARGE = 0.2;
 const AIRWAY_LINE_WIDTH = 0.5;
 const AIRWAY_LINE_COLOR = '#8f8f8f';
-const AIRCRAFT_SYMBOL_SIZE = 5;
+const AIRCRAFT_SYMBOL_SIZE = 7;
 const AIRCRAFT_SYMBOL_COLOR = '#ffffff';
-const AIRCRAFT_PROJECTION_LENGTH = 20;
+const AIRCRAFT_PROJECTION_LENGTH = 40;
 const AIRCRAFT_PROJECTION_WIDTH = 1.5;
 const AIRCRAFT_PROJECTION_COLOR = '#ffffff';
+const AIRCRAFT_VECTORING_COLOR = 'yellow';
+const AIRCRAFT_VECTORING_WIDTH = 4;
+const TEXT_COLOR = 'yellow';
+const TEXT_SIZE = 18;
 
 
 /*************************************************/
@@ -50,11 +55,9 @@ let background_layer = new Layer();
 let waypoint_layer   = new Layer();
 let airway_layer     = new Layer();
 let aircraft_layer   = new Layer();
+let maneuver_layer   = new Layer();
 let graphic_layer    = new Layer();
 let text_layer       = new Layer();
-
-if (DEBUG) 
-    console.log(project.layers);
 
 // Add a rectangle as a bg layer
 background_layer.activate();
@@ -67,3 +70,11 @@ let bg = new Path.Rectangle({
 });
 
 
+// GLOBAL STATE VARIABLES
+let is_vectoring = false;
+
+let waypoints = [];
+let airways   = [];
+let aircrafts = [];
+
+let ac = null; // the selected AC by mouse click

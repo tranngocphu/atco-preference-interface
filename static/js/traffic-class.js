@@ -30,14 +30,43 @@ class Waypoint {
 		this.x = x;
 		this.y = y;
 		this.position = [x,y];
-		this.symbol = new WaypointSymbol(x, y);
+		this.symbol = new WaypointSymbol(name, x, y);
 		this.airways = [];
+		this.symbol.onMouseEnter = function(event) {			
+			this.scale(2,2);			
+			Waypoint.mouse_enter(event, this.name);			
+		}
+		this.symbol.onMouseLeave = function(event) {			
+			this.scale(0.5, 0.5);
+			Waypoint.mouse_leave(event, this.name);			
+		}
+		this.symbol.onMouseMove = function(event) {
+			Waypoint.mouse_move(event, this.name);
+		}
 	}
 
 	add_airway(airway) {
 		this.airways.push(airway);
 	}
+
+	/** STATIC METHODS */
+	static mouse_enter(event, name) {
+		console.log("Mouse entered waypoint", name);
+		if (is_vectoring) {
+			ac.anotation.content = "Direct to this waypoint."; 
+		}
+	}	
 	
+	static mouse_leave(event, name) {
+		console.log("Mouse left waypoint", name);
+	}
+	
+	static mouse_move(event, name) {
+		console.log("Mouse moving on waypoint", name);
+		if (is_vectoring) {
+			ac.anotation.content = "Direct to this waypoint."; 
+		}
+	}
 }
 
 
@@ -83,12 +112,60 @@ class Aircraft {
 		this.y = y;
 		this.dir_x = dir_x;
 		this.dir_y = dir_y;
-		this.symbol = new AircraftLocationSymbol(x, y);
+		this.symbol = new AircraftLocationSymbol(name, x, y);		
 		let projection_x = x + dir_x * AIRCRAFT_PROJECTION_LENGTH;
-		let projection_y = y + dir_y * AIRCRAFT_PROJECTION_LENGTH;
-		this.projection = new AircraftProjectionLine([x,y], [projection_x, projection_y]);
+		let projection_y = y + dir_y * AIRCRAFT_PROJECTION_LENGTH;		
+		this.projection = new AircraftProjectionLine(name, [x,y], [projection_x,projection_y]);
+		this.vectoring = new AircraftVectoringLine(name, [x,y], [x,y]);	
+		this.anotation = new AircraftVectoringText();
+		this.angle = this.projection.angle();
+		
+		this.symbol.onMouseDown = function(event) {
+			Aircraft.mouse_down(this.name);
+		}
+		this.symbol.onMouseUp = function(event) {
+			Aircraft.mouse_up(this.name);
+		}
+		this.symbol.onMouseDrag = function(event) {
+			Aircraft.mouse_drag(this.name, event);
+		}
+		this.vectoring.onMouseDrag = function(event) {
+			Aircraft.mouse_drag(this.name, event);
+		}
 	}
 
+	/** STATIC METHODS */
+
+	static mouse_down(name) {
+		is_vectoring = true; // enter vectoring mode on mouse down an aircraft
+		if (ac) {
+			ac.vectoring.visible = false; // show vectoring maneuver line
+			ac.anotation.visible = false; // show anotation				
+		}
+		ac = aircrafts[name];
+		ac.vectoring.visible = true; // show vectoring maneuver line
+		ac.anotation.visible = true; // show anotation				
+	}
+	
+	static mouse_up(name) {		
+		is_vectoring = false; // exit vectoring mode on mouse up an aircraft
+	}
+
+	static mouse_drag(name, event) {		
+		let turn_angle = event.point.subtract(ac.projection.firstSegment.point).angle - ac.angle;
+		turn_angle = turn_angle <= 180 ? Math.round(turn_angle) : Math.round(turn_angle-360);
+		let normal = ac.vectoring.getNormalAt(ac.vectoring.length/2).multiply(30);
+		let prefix = turn_angle < 0 ? 'Turn left ' : 'Turn right ';	
+		prefix = turn_angle == 0 ? '' : prefix;
+		if ( -90 < turn_angle & turn_angle < 90 ) {
+			is_vectoring = true;
+			ac.vectoring.lastSegment.point = event.point; // update maneuver line										
+			ac.anotation.point = ac.vectoring.lastSegment.point.add(normal);					
+			ac.anotation.content = prefix + Math.abs(Math.round(turn_angle)) + '°';
+		} else {
+			is_vectoring = false;
+		}
+	}
 }
 
 /** 
