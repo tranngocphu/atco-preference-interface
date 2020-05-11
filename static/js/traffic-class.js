@@ -152,8 +152,9 @@ class Aircraft {
 	}
 
 	static mouse_drag(name, event) {		
-		let turn_angle = event.point.subtract(ac.projection.firstSegment.point).angle - ac.angle;
-		turn_angle = turn_angle <= 180 ? Math.round(turn_angle) : Math.round(turn_angle-360);
+		let turn_angle = Math.round(event.point.subtract(ac.projection.firstSegment.point).angle - ac.angle);
+		turn_angle = turn_angle < 0 ? 360 + turn_angle : turn_angle;
+		turn_angle = turn_angle <= 180 ? turn_angle : turn_angle - 360;
 		let normal = ac.vectoring.getNormalAt(ac.vectoring.length/2).multiply(30);
 		let prefix = turn_angle < 0 ? 'Turn left ' : 'Turn right ';	
 		prefix = turn_angle == 0 ? '' : prefix;
@@ -162,6 +163,7 @@ class Aircraft {
 			ac.vectoring.lastSegment.point = event.point; // update maneuver line										
 			ac.anotation.point = ac.vectoring.lastSegment.point.add(normal);					
 			ac.anotation.content = prefix + Math.abs(Math.round(turn_angle)) + '°';
+			// ac.anotation.content = Math.round(ac.angle) + "   " + Math.round(event.point.subtract(ac.projection.firstSegment.point).angle) + "   " + turn_angle;
 		} else {
 			is_vectoring = false;
 		}
