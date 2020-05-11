@@ -1,0 +1,10 @@
+.vscode
+.well-known
+.htaccess
+cgi-bin
+
+python-code/__pycache__
+handlers/__pycache__
+handlers/index.py
+
+
