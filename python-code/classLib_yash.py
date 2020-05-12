@@ -1,26 +1,26 @@
-"""creating classes for waypoints, airways and aircraft.
-    These classes only have data attributes for the moment"""
 import numpy as np
+import matplotlib.pyplot as plt
 
-class wayPoint:
+class WayPoint:
     def __init__(self,name, point):
+        """The waypoint object has a name, x co-rord and y co-ord"""
         self.name = name
         self.x=point[0]
         self.y=point[1]
-        # can i define functions here itself, so that i randomly input some number, and this class and this function will check and
-        # return a group of waypoints
+
     def __str__(self):
         return 'waypoint class:'+ self.name +'  x co-ord: '+ str(self.x) +'  y co-ord: '+str(self.y)
 
 class Airways:
-    def __init__(self, name, points):
+    def __init__(self, name, start, end):
+        """here 'start' and 'end' are waypoint objects"""
         self.name=name
-        self.start_wp= points[0][0]
-        self.end_wp=points[1][0]
-        self.start_wp_x= points[0][1][0]
-        self.start_wp_y= points[0][1][1]
-        self.end_wp_x= points[1][1][0]
-        self.end_wp_y = points[1][1][1]
+        self.start_wp = start.name
+        self.end_wp = end.name
+        self.start_wp_x = start.x
+        self.start_wp_y = start.y
+        self.end_wp_x = end.x
+        self.end_wp_y = end.y
  
     def airwayStartLoc(self):
         self.start_x = self.start_wp_x
@@ -41,11 +41,11 @@ class Airways:
         
         return self.slope, self.intercept
         
-        """eqn- (y-y1)/(y2-y1) = (x-x1)/(x2-x1) --> y = ((y2-y1)/(x2-x1))*x - x1*((y2-y1)/(x2-x1)) +y1
-                                                Y = MX +C
-                                                so,Y(t) = M*X(t) +C, 
-                                                        where x = X(t) and Y(t) = ((y2-y1)/(x2-x1))*X(t) - x1*((y2-y1)/(x2-x1)) +y1      
-        """
+    #     """eqn- (y-y1)/(y2-y1) = (x-x1)/(x2-x1) --> y = ((y2-y1)/(x2-x1))*x - x1*((y2-y1)/(x2-x1)) +y1
+    #                                             Y = MX +C
+    #                                             so,Y(t) = M*X(t) +C, 
+    #                                                     where x = X(t) and Y(t) = ((y2-y1)/(x2-x1))*X(t) - x1*((y2-y1)/(x2-x1)) +y1      
+    #     """
 
     def location(self):
         self.xt_min = self.start_wp_x
@@ -53,42 +53,36 @@ class Airways:
         self.slope = (self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)
         self.yt_min = self.xt_min*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
         self.yt_max = self.xt_max*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
-        self.locations=[]
+        self.location=[]
         for i in np.linspace(self.xt_min,self.xt_max,15):
-            yt = np.round(i,2)*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
-            self.locations.append([np.round(i,2),np.round(yt,2)])
+            yt = np.round(i,4)*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
+            self.location.append([np.round(i,4),np.round(yt,4)])
 
-        return self.locations
+        return self.location
              
-    
-class Aircraft:
-    def __init__(self, name, points): #the points here are form the list "sampled_airways" in the main_attmept1 file
-        self.name= name 
-        self.startName= points[0][0]
-        self.endName= points[1][0]
-        self.start_x= points[0][1][0]
-        self.start_y= points[0][1][1]
-        self.end_x= points[1][1][0]
-        self.end_y = points[1][1][1]
-        self.start_wp_x= points[0][1][0]
-        self.start_wp_y= points[0][1][1]
-        self.end_wp_x= points[1][1][0]
-        self.end_wp_y = points[1][1][1]
-        self.start = np.array([self.start_x,self.start_y])
-        self.end = np.array([self.end_x, self.end_y])
-        self.segment = np.linalg.norm(self.start - self.end)
-        self.dir_x = (self.end_x - self.start_x) / self.segment
-        self.dir_y = (self.end_y - self.start_y) / self.segment
-        
-    def location(self):
-        self.xt_min = self.start_wp_x
-        self.xt_max = self.end_wp_x
-        self.slope = (self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)
-        self.yt_min = self.xt_min*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
-        self.yt_max = self.xt_max*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
-        self.locations=[]
-        for i in np.linspace(self.xt_min,self.xt_max,15):
-            yt = np.round(i,2)*self.slope - self.start_wp_x*((self.end_wp_y - self.start_wp_y) / (self.end_wp_x - self.start_wp_x)) + self.start_wp_y
-            self.locations.append([np.round(i,2),np.round(yt,2)])
+    def __str__(self):
+        return self.start_wp +'start coords' + str(self.start_wp_x) + str(self.start_wp_y) +  self.end_wp
+        # self.endPoint= self.end_wp_x, self.end_wp_y
+        # return self.startPoint, self.endPoint
 
-        return self.locations
+    
+
+class Aircraft:
+    def __init__(self, name, route):
+        """here route is the airway object"""
+        self.name = name
+        self.route = route.name
+        self.start_wp = route.start_wp
+        self.end_wp = route.end_wp
+        self.start_wp_x = route.start_wp_x
+        self.start_wp_y = route.start_wp_y
+        self.end_wp_x = route.end_wp_x
+        self.end_wp_y = route.end_wp_y
+        self.location = route.location
+
+        # self.start = np.array([self.start_x,self.start_y])
+        # self.end = np.array([self.end_x, self.end_y])
+        # self.segment = np.linalg.norm(self.start - self.end)
+        # self.dir_x = (self.end_x - self.start_x) / self.segment
+        # self.dir_y = (self.end_y - self.start_y) / self.segment
+    
