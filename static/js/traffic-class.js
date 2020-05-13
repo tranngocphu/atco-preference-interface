@@ -121,7 +121,7 @@ class Aircraft {
 		this.in_conflict = false;
 		this.conflict_markers = {};
 		this.symbol.onMouseDown = function(event) {
-			Aircraft.mouse_down(this.name);
+			Aircraft.mouse_down(this.name);			
 		}
 		this.symbol.onMouseUp = function(event) {
 			Aircraft.mouse_up(this.name);
@@ -132,6 +132,12 @@ class Aircraft {
 		this.vectoring.onMouseDrag = function(event) {
 			Aircraft.mouse_drag(this.name, event);
 		}
+		this.symbol.onDoubleClick = function(event) {
+			Aircraft.double_click(this.name, event);
+		}
+		this.vectoring.onDoubleClick = function(event) {
+			Aircraft.double_click(this.name, event);
+		}
 	}
 
 
@@ -140,14 +146,16 @@ class Aircraft {
 	 * @param {Boolean} conflict indicates if there's a conflict
 	 */
 	alert(conflict, cpa_x, cpa_y, intruder_name) {		
-		if (conflict) {			
-			this.conflict_markers[intruder_name] = new AircraftCPAMarker(cpa_x, cpa_y);
+		if (conflict) {	
+			if ( intruder_name in this.conflict_markers ) {				
+				this.conflict_markers[intruder_name].position = [cpa_x, cpa_y];
+			} else {
+				this.conflict_markers[intruder_name] = new AircraftCPAMarker(cpa_x, cpa_y);
+			}					
 		}
-		else {
-			if ( intruder_name in this.conflict_markers ) {
-				this.conflict_markers[intruder_name].remove();
-				delete this.conflict_markers[intruder_name];
-			}
+		else if ( intruder_name in this.conflict_markers ) {				
+			this.conflict_markers[intruder_name].remove();
+			delete this.conflict_markers[intruder_name];
 		}
 		let intruder_count = Object.keys(this.conflict_markers).length;
 		this.symbol.fillColor = intruder_count > 0 ? AIRCRAFT_SYMBOL_ALERT_COLOR : AIRCRAFT_SYMBOL_COLOR; 
@@ -162,11 +170,10 @@ class Aircraft {
 	 */
 	is_conflict(ac, mode=false) {			
 		let conflict, cpa_closure, cpa_point_0, cpa_point_1;
-		let p0 = math.matrix(this.symbol.position.coords());
-		let v0 = mode ? math.matrix(this.vectoring.getTangentAt(0).coords()) : math.matrix(this.projection.getTangentAt(0).coords());
+		let p0 = math.matrix(this.symbol.position.coords());		
 		let p1 = math.matrix(ac.symbol.position.coords());
-		let v1 = math.matrix(ac.projection.getTangentAt(0).coords());
-		console.log(p0, v0, p1, v1);
+		let v0 = mode ? math.matrix(this.vectoring.getTangentAt(0).coords()) : math.matrix(this.projection.getTangentAt(0).coords());
+		let v1 = mode ?   math.matrix(ac.vectoring.getTangentAt(0).coords()) :   math.matrix(ac.projection.getTangentAt(0).coords());
 		let w0 = math.subtract(p0, p1);
 		let dv = math.subtract(math.multiply(v0, this.speed), math.multiply(v1, ac.speed));
 		let time2cpa = -(math.dot(w0, dv)) / (math.norm(dv) * math.norm(dv));			
@@ -178,8 +185,7 @@ class Aircraft {
 			cpa_closure = math.norm(w0);
 			cpa_point_0 = p0;
 			cpa_point_1 = p1;
-		}
-		console.log(SEPARATION_MINIMA, cpa_closure);
+		}		
 		conflict = cpa_closure < SEPARATION_MINIMA ? true : false;
 		this.alert(conflict, math.subset(cpa_point_0, math.index(0)), math.subset(cpa_point_0, math.index(1)), ac.name);
 		ac.alert(conflict, math.subset(cpa_point_1, math.index(0)), math.subset(cpa_point_1, math.index(1)), this.name);
@@ -190,10 +196,12 @@ class Aircraft {
 	static mouse_down(name) {
 		console.log(name);
 		is_vectoring = true; // enter vectoring mode on mouse down an aircraft
-		if (ac) {
-			ac.vectoring.visible = false; // show vectoring maneuver line
-			ac.annotation.visible = false; // show annotation				
-		}
+		// if (ac) {
+		// 	// if there's an ac previously selected, clear the selected ac data
+		// 	ac.vectoring.visible = false; // show vectoring maneuver line
+		// 	ac.annotation.visible = false; // show annotation				
+		// 	ac = null;
+		// }
 		ac = scenario.aircrafts[name];
 		ac.vectoring.visible = true; // show vectoring maneuver line
 		ac.annotation.visible = true; // show annotation				
@@ -210,14 +218,22 @@ class Aircraft {
 		if ( -90 < turn_angle & turn_angle < 90 ) {
 			is_vectoring = true;
 			let normal = ac.vectoring.getNormalAt(ac.vectoring.length/2).multiply(30);
-			let prefix = turn_angle < 0 ? 'Turn left ' : 'Turn right ';	
+			let prefix = turn_angle < 0 ? 'L' : 'R';	
 			prefix = turn_angle == 0 ? '' : prefix;			
 			ac.vectoring.lastSegment.point = event.point; // update maneuver line										
-			ac.annotation.point = ac.vectoring.lastSegment.point.add(normal);					
-			ac.annotation.content = prefix + Math.abs(Math.round(turn_angle)) + '°';			
+			ac.annotation.point = ac.vectoring.getPointAt(ac.vectoring.length/2).add(normal);
+			ac.annotation.content = prefix + Math.abs(Math.round(turn_angle)) + '°';
+			scenario.detect_conflict(true);
 		} else {
 			is_vectoring = false;
-		}
+		}		
+	}
+
+	static double_click(name, event) {
+		ac = scenario.aircrafts[name];
+		ac.vectoring.segments = ac.projection.segments;
+		ac.vectoring.visible = false;
+		ac.annotation.visible = false;			
 	}
 }
 
@@ -235,12 +251,10 @@ class Scenario {
 		this.waypoints = {};
 		this.airways = {};
 		this.aircrafts = {};
-
 		this.read_waypoint(data.waypoints);
 		this.read_airway(data.airways);
 		this.read_aircraft(data.aircrafts);
-
-		this.detect_conflict();
+		this.detect_conflict(false);
 	}
 
 	read_waypoint(data) {
@@ -277,11 +291,16 @@ class Scenario {
 		}	
 	}
 
-	detect_conflict() {
+
+	/**
+	 * 
+	 * @param {Boolean} mode mode=false using projection; mode=true using vectoring
+	 */
+	detect_conflict(mode) {
 		let names = Object.keys(this.aircrafts);
 		for (let i=0; i<names.length-1; i++) {
 			for (let j=i+1; j<names.length; j++) {
-				this.aircrafts[names[i]].is_conflict(this.aircrafts[names[j]], false);
+				this.aircrafts[names[i]].is_conflict(this.aircrafts[names[j]], mode);
 			}
 		}
 	}
