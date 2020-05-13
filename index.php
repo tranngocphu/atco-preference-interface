@@ -28,7 +28,7 @@ foreach ($exercises as $ex) {
     <div class="container-fluid">         
     
         <div class="row">
-            <div class="col-4">
+            <div class="col-5">
                 <span>Name:</span>
                 <input type="text" id="user" name="user" size="20"></input>
                 <span>Exercise:</span>
@@ -44,7 +44,7 @@ foreach ($exercises as $ex) {
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>Status: <span id="status"></span></span>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <input type="checkbox" id="waypoint-cb" name="" value="" checked>Waypoints
                 &nbsp;
                 <input type="checkbox" id="airway-cb" name="" value="" checked>Airways
