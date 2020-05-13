@@ -36,3 +36,12 @@ function remove_all() {
     text_layer.removeChildren();
     scenario = null;      
 }
+
+
+
+/**
+ * Function to show data 
+ */
+function show_data(data) {
+    $('#data').html(JSON.stringify(data));
+}

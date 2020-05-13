@@ -16,7 +16,7 @@
 <body>
     <div class="container-fluid">
         <div class="row h-100">
-            
+
             <div class="col-2 my-auto text-center">
                 <div>
                     <button type="button" id="back-btn" class="btn-lg" onclick="navigate(0);">SAVE<br><span class="nav-btn-text">&#171;</span></button>
@@ -35,6 +35,10 @@
             </div>  
 
         </div>
+
+        <div id="data">            
+        </div>
+
     </div>
 
     <script type="text/javascript" src="static/vendor/jquery.min.js"></script> 
