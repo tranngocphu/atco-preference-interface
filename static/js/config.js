@@ -30,7 +30,7 @@ const WAYPOINT_SYMBOL_URL = 'static/img/waypoint.png';
 const WAYPOINT_SYMBOL_NORMAL = 0.1;
 const WAYPOINT_SYMBOL_LARGE = 0.2;
 const AIRWAY_LINE_WIDTH = 0.5;
-const AIRWAY_LINE_COLOR = '#8f8f8f';
+const AIRWAY_LINE_COLOR = '#873f00';
 const AIRCRAFT_SYMBOL_SIZE = 7;
 const AIRCRAFT_SYMBOL_COLOR = '#ffffff';
 const AIRCRAFT_SYMBOL_ALERT_COLOR = '#15ff00';
@@ -72,8 +72,8 @@ view.Size = [PAPER_WIDTH, PAPER_HEIGHT];
 
 // Define all layers
 let background_layer = new Layer();
-let waypoint_layer   = new Layer();
 let airway_layer     = new Layer();
+let waypoint_layer   = new Layer();
 let graphic_layer    = new Layer();
 let conflict_layer   = new Layer();
 let maneuver_layer   = new Layer();
