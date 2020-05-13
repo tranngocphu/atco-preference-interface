@@ -18,3 +18,8 @@
 .nav-btn-text {
 	font-size: 40pt;
 }
+
+#back-btn,
+#next-btn  {
+	padding-top: 25px;
+}

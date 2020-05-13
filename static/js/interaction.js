@@ -7,21 +7,20 @@ function navigate(next) {
         if (index<n-1) {
             index += 1;
             remove_all();
-            scenario = new Scenario(data[index]);
-            $('#back-btn').prop('disabled', false);
-            if (index==n-1) 
-                $('#next-btn').prop('disabled', true);            
-        }         
+            scenario = new Scenario(data[index]);       
+        } else {
+            alert("Data saved! Also end of exercise reached. Thank you!");
+        }        
     } else {
         if (index>0) {
             index -= 1;
             remove_all();
             scenario = new Scenario(data[index]);
-            $('#next-btn').prop('disabled', false);
-            if (index==0) 
-                $('#back-btn').prop('disabled', true);
+        } else {
+            alert("Data saved! And you're at the first scenario of this exercise."); 
         } 
-    }     
+    }
+    $('#current-index').html(`${index+1}/${n}`);
 }
 
 

@@ -16,7 +16,7 @@
 
 
 
-function generate_data() {
+function generate_data(n) {
     
     let wp_names = ['wp1', 'wp2', 'wp3', 'wp4', 'wp5', 'wp6', 'wp7', 'wp8', 'wp9', 'wp10'];
     let aw_names = ['aw1', 'aw2', 'aw3', 'aw4', 'aw5', 'aw6', 'aw7', 'aw8', 'aw9', 'aw10'];
@@ -24,7 +24,7 @@ function generate_data() {
     
     let scenarios = [];    
     
-    for (k=0; k<10; k++) {
+    for (k=0; k<n; k++) {
         // Scenarios loop (10 scenarios)
         let scenario = { waypoints : {}, airways : {}, aircrafts : {} };
     

@@ -1,2 +1,2 @@
-data = generate_data();
+data = generate_data(20);
 n = data.length;
