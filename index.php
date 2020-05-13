@@ -6,6 +6,11 @@ $selections = array();
 foreach ($exercises as $ex) {
     $selections[$ex] = str_replace(".json", "", $ex);
 }
+
+if ( extension_loaded('pdo') ) {
+    echo "PDO OK";
+}
+
 ?>
 
 
@@ -28,21 +33,28 @@ foreach ($exercises as $ex) {
     <div class="container-fluid">         
     
         <div class="row">
-            <div class="col-3">
-                <span>Please enter Your Name:</span>
-                <input type="text" id="user" name="user" val=""></input>
-            </div>
-            <div class="col-3">
-                <span>And choose an exercise:</span>
+            <div class="col-4">
+                <span>Name:</span>
+                <input type="text" id="user" name="user" size="20"></input>
+                <span>Exercise:</span>
                 <select id="exercise" onchange="request_exercise(this.value);">
                     <option value=""></option>
                     <?php foreach ($selections as $key=>$val) : ?>
                     <option value="<?= $key ?>"><?= $val ?></option>
                     <?php endforeach; ?>
                 </select>
+            </div>            
+            <div class="col-5">
+                <span>Scenario index: <span id="current-index"></span></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>Status: <span id="status"></span></span>
             </div>
-            <div class="col-3">Scenario index: <span id="current-index"></span></div>
-            <div class="col-3">Status: <span id="status"></span></div>
+            <div class="col-3">
+                <input type="checkbox" id="waypoint-cb" name="" value="" checked>Waypoints
+                &nbsp;
+                <input type="checkbox" id="airway-cb" name="" value="" checked>Airways
+            </div>
+            
         </div>         
         <div class="row h-100">
 
@@ -79,10 +91,8 @@ foreach ($exercises as $ex) {
     </script>    
     <script type="text/javascript" src="static/js/config.js"></script>    
     <script type="text/javascript" src="static/js/graphic-class.js"></script>
-    <script type="text/javascript" src="static/js/traffic-class.js"></script>    
-    <script type="text/javascript" src="static/js/sample-data.js"></script>
+    <script type="text/javascript" src="static/js/traffic-class.js"></script>        
     <script type="text/javascript" src="static/js/dom.js"></script>
-    <script type="text/javascript" src="static/js/interaction.js"></script>
-    <script type="text/javascript" src="static/js/main.js"></script>
+    <script type="text/javascript" src="static/js/interaction.js"></script>    
 </body>
 </html>
