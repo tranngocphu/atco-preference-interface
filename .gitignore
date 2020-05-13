@@ -8,5 +8,6 @@ python-code/__pycache__
 python-code/.ipynb_checkpoints
 handlers/__pycache__
 handlers/index.py
+handlers/config.php
 
 

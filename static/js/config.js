@@ -75,12 +75,12 @@ view.Size = [PAPER_WIDTH, PAPER_HEIGHT];
 // Define all layers
 let background_layer = new Layer();
 let airway_layer     = new Layer();
-let waypoint_layer   = new Layer();
 let graphic_layer    = new Layer();
 let conflict_layer   = new Layer();
 let maneuver_layer   = new Layer();
 let aircraft_layer   = new Layer();
 let text_layer       = new Layer();
+let waypoint_layer   = new Layer();
 
 // Add a rectangle as a bg layer
 background_layer.activate();
@@ -100,3 +100,4 @@ let index = -1; // index of the current scenario in the data array
 let scenario = null; // the scenario being shown to the user
 let ac = null; // the last selected AC by mouse click
 let is_vectoring = false;  // indicating if the user is vectoring an aircraft
+let save_count = 0;

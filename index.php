@@ -6,11 +6,6 @@ $selections = array();
 foreach ($exercises as $ex) {
     $selections[$ex] = str_replace(".json", "", $ex);
 }
-
-if ( extension_loaded('pdo') ) {
-    echo "PDO OK";
-}
-
 ?>
 
 

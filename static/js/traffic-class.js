@@ -35,11 +35,18 @@ class Waypoint {
 		this.airways = [];
 		this.symbol.onMouseEnter = function(event) {			
 			this.scale(2,2);			
-			Waypoint.mouse_enter(event, this.name);			
+			Waypoint.mouse_enter(event, this.name);		
+			if (is_vectoring) {
+				ac.annotation.content = DCT_TEXT;
+				ac.update_dct(this.name);				
+			}	
 		}
 		this.symbol.onMouseLeave = function(event) {			
 			this.scale(0.5, 0.5);
-			Waypoint.mouse_leave(event, this.name);			
+			Waypoint.mouse_leave(event, this.name);	
+			if (is_vectoring) {
+				ac.update_dct();				
+			}		
 		}
 		this.symbol.onMouseMove = function(event) {
 			Waypoint.mouse_move(event, this.name);
@@ -52,12 +59,11 @@ class Waypoint {
 
 	/** STATIC METHODS */
 	static mouse_enter(event, name) {		
-		if (is_vectoring) {
-			ac.annotation.content = DCT_TEXT;
-		}
+
 	}
 	
 	static mouse_leave(event, name) {		
+
 	}
 	
 	static mouse_move(event, name) {		
@@ -121,6 +127,8 @@ class Aircraft {
 		this.in_conflict = false;
 		this.conflict_markers = {};
 		this.cpa_connectors = {};
+		this.resolution = { "turn_angle" : 0, "dct" : null };
+		/** Event */
 		this.symbol.onMouseDown = function(event) {
 			Aircraft.mouse_down(this.name);			
 		}
@@ -140,6 +148,23 @@ class Aircraft {
 			Aircraft.double_click(this.name, event);
 		}
 	}
+
+
+	/**
+	 * Resolution update
+	 */
+	reset_resolution() {
+		this.resolution = { "turn_angle" : 0, "dct" : null };		
+	}
+
+	update_angle(angle) {
+		this.resolution.turn_angle = angle;				
+	}
+
+	update_dct(waypoint_name=null) {
+		this.resolution.dct = waypoint_name;		
+	}
+
 
 
 	/**
@@ -213,16 +238,13 @@ class Aircraft {
 		ac.vectoring.visible = true; // show vectoring maneuver line
 		ac.annotation.visible = true; // show annotation				
 	}
-	
-	static mouse_up(name) {		
-		is_vectoring = false; // exit vectoring mode on mouse up an aircraft
-	}
 
 	static mouse_drag(name, event) {		
 		let turn_angle = Math.round(event.point.subtract(ac.projection.firstSegment.point).angle - ac.angle);
 		turn_angle = turn_angle < 0 ? 360 + turn_angle : turn_angle;
-		turn_angle = turn_angle <= 180 ? turn_angle : turn_angle - 360;
+		turn_angle = turn_angle <= 180 ? turn_angle : turn_angle - 360;		
 		if ( -90 < turn_angle & turn_angle < 90 ) {
+			ac.update_angle(turn_angle);
 			is_vectoring = true;
 			let normal = ac.vectoring.getNormalAt(ac.vectoring.length/2).multiply(30);
 			let prefix = turn_angle < 0 ? 'L' : 'R';	
@@ -236,11 +258,16 @@ class Aircraft {
 		}		
 	}
 
+	static mouse_up(name) {		
+		is_vectoring = false; // exit vectoring mode on mouse up an aircraft		
+	}
+
 	static double_click(name, event) {
 		ac = scenario.aircrafts[name];
 		ac.vectoring.segments = ac.projection.segments;
 		ac.vectoring.visible = false;
 		ac.annotation.visible = false;
+		ac.reset_resolution();
 		scenario.detect_conflict(true);
 	}
 }

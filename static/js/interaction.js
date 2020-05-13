@@ -13,6 +13,8 @@ function navigate(next) {
         return
     }
 
+    save_resolution();
+
     if (next) {
         if (index<n-1) {
             index += 1;
@@ -81,8 +83,36 @@ function request_exercise(name) {
 }
 
 
-function save_resolution() {
 
+/**
+ * Function to send resolution to server and save
+ */
+function save_resolution() {
+    if (index<0 | index>n-1)
+        return
+    let names = Object.keys(scenario.aircrafts);
+    for (let i=0; i<names.length; i++) {
+        let name = names[i];
+        data[index].aircrafts[name]['resolution'] = scenario.aircrafts[name].resolution;
+    }
+    let save_data = {
+        "action" : "save",
+        "scenario_index" : index,
+        "exercise" : $('#exercise').val(),
+        "name" : $('#user').val(),
+        "scenario_data" : JSON.stringify(data[index]),
+        "resolution_data" : JSON.stringify(data[index].aircrafts)
+    };
+    $.post('/handlers/save.php', save_data)
+        .done(function(response) {
+            response = JSON.parse(response);
+            if (response.status) {
+                save_count += 1;
+                $('#status').html(`Number of records saved: ${save_count}.`);
+            } else {
+                alert("Data couldn't be saved properly. Please contact us!");
+            }
+        })
 }
 
 
