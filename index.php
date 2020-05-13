@@ -53,17 +53,17 @@ foreach ($exercises as $ex) {
         </div>         
         <div class="row h-100">
 
-            <div class="col-2 my-auto text-center">                           
+            <div class="col-1 my-auto text-center">                           
                 <div>                    
                     <button type="button" id="back-btn" class="btn-lg" onclick="navigate(0);">SAVE<br><span class="nav-btn-text">&#171;</span></button>
                 </div>                
             </div>
 
-            <div class="col-8 text-center">                  
+            <div class="col-10 text-center">                  
                 <canvas id="airspace" width="900" height="900"></canvas>                
             </div>            
             
-            <div class="col-2 my-auto text-center">
+            <div class="col-1 my-auto text-center">
                 <div >
                     <button type="button" id="next-btn" class="btn-lg" onclick="navigate(1);">SAVE<br><span class="nav-btn-text">&#xbb;</span></button>
                 </div>
