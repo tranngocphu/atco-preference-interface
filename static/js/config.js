@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  * File: config.js
  * File Path: /home/phu/projects/atco-preference-interface/static/js/config.js
@@ -38,7 +40,7 @@ const AIRCRAFT_CPA_ALERT_SIZE = 3;
 const AIRCRAFT_CPA_ALERT_COLOR = 'red';
 const AIRCRAFT_CPA_CONNECTOR_WIDTH = 0.8;
 const AIRCRAFT_CPA_CONNECTOR_DASH = [10,3];
-const AIRCRAFT_CPA_CONNECTOR_COLOR = '#ff2ba7';
+const AIRCRAFT_CPA_CONNECTOR_COLOR = '#bd007e';
 const AIRCRAFT_PROJECTION_LENGTH = 40;
 const AIRCRAFT_PROJECTION_WIDTH = 1.5;
 const AIRCRAFT_PROJECTION_COLOR = '#ffffff';
@@ -65,7 +67,7 @@ const SEPARATION_MINIMA = 5*NM2POINT;         // separation standard in points
 /*************************************************/
 
 // Paper setup
-let canvas = document.getElementById('myCanvas');
+let canvas = document.getElementById('airspace');
 canvas.width = PAPER_WIDTH;
 canvas.height = PAPER_HEIGHT;
 view.Size = [PAPER_WIDTH, PAPER_HEIGHT];
@@ -92,10 +94,9 @@ let bg = new Path.Rectangle({
 
 
 // GLOBAL STATE VARIABLES
-let is_vectoring = false;
-
-let waypoints = [];
-let airways   = [];
-let aircrafts = [];
-
-let ac = null; // the selected AC by mouse click
+let data = null; // the data object storing all scenarios loaded
+let n = null; // the total number of scenarios loaded
+let index = -1; // index of the current scenario in the data array
+let scenario = null; // the scenario being shown to the user
+let ac = null; // the last selected AC by mouse click
+let is_vectoring = false;  // indicating if the user is vectoring an aircraft

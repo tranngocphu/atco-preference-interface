@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="static/vendor/bootstrap.css">
+    <link rel="stylesheet" href="static/css/style.css">
 
 </head>
 
@@ -16,19 +17,19 @@
     <div class="container-fluid">
         <div class="row h-100">
             
-            <div class="col-3 my-auto">
-                <div class="text-center">
-                    <button class="btn btn-lg btn-primary">BACK</button>
+            <div class="col-2 my-auto text-center">
+                <div>
+                    <button type="button" id="back-btn" class="btn-lg" onclick="navigate(0);"><span class="nav-btn-text">&#171;</span></button>
                 </div>
             </div>           
             
-            <div class="col-6 text-center">                
-                <canvas id="myCanvas" width="900" height="900"></canvas>                 
+            <div class="col-8 my-auto text-center">                
+                <canvas id="airspace" width="900" height="900"></canvas>                 
             </div>            
             
-            <div class="col-3 my-auto">
-                <div class="text-center">
-                    <button class="btn btn-lg btn-primary">NEXT</button>
+            <div class="col-2 my-auto text-center">
+                <div >
+                    <button type="button" id="next-btn" class="btn-lg" onclick="navigate(1);"><span class="nav-btn-text">&#xbb;</span></button>
                 </div>
             </div>  
 
@@ -41,14 +42,14 @@
     <script type="text/javascript" src="static/vendor/paper-full.js"></script>
     <script type="text/javascript">
         paper.install(window);
-        paper.setup('myCanvas');
+        paper.setup('airspace');
     </script>    
     <script type="text/javascript" src="static/js/config.js"></script>    
     <script type="text/javascript" src="static/js/graphic-class.js"></script>
     <script type="text/javascript" src="static/js/traffic-class.js"></script>    
     <script type="text/javascript" src="static/js/sample-data.js"></script>
     <script type="text/javascript" src="static/js/dom.js"></script>
-    <script type="text/javascript" src="static/js/helpers.js"></script>
+    <script type="text/javascript" src="static/js/interaction.js"></script>
     <script type="text/javascript" src="static/js/main.js"></script>
 </body>
 </html>

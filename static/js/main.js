@@ -1,2 +1,2 @@
-let data = generate_data();
-let scenario = new Scenario(data[0]);
+data = generate_data();
+n = data.length;
