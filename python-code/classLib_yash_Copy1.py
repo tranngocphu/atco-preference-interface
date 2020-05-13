@@ -64,7 +64,7 @@ class Airways:
         return self.start_wp +'start coords' + str(self.start_wp_x) + str(self.start_wp_y) +  self.end_wp
         
 
-    
+
 
 class Aircraft:
     def __init__(self, name, route):
