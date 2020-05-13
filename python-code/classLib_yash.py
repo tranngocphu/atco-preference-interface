@@ -63,7 +63,6 @@ class Airways:
     def __str__(self):
         return self.start_wp +'start coords' + str(self.start_wp_x) + str(self.start_wp_y) +  self.end_wp
       
-
     
 
 class Aircraft:

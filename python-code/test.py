@@ -55,7 +55,3 @@ for i in range(ac_per_scenario):
     aircraft= Aircraft(aircraft_name[i],point)
     aircraftList.append(aircraft)
 
-class Scenario:
-    def __init__(self):
-        pass
-    
