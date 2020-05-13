@@ -267,7 +267,7 @@ class Scenario {
 
 	read_waypoint(data) {
 		let names = Object.keys(data);
-		for (i=0; i<names.length; i++) {
+		for (let i=0; i<names.length; i++) {
 			let name = names[i];
 			this.waypoints[name] = new Waypoint(name, data[name].x, data[name].y);
 		}		
@@ -275,7 +275,7 @@ class Scenario {
 
 	read_airway(data) {
 		let names = Object.keys(data);
-		for (i=0; i<names.length; i++) {
+		for (let i=0; i<names.length; i++) {
 			let name = names[i];
 			this.airways[name] = new Airway(
 				name, 
@@ -287,7 +287,7 @@ class Scenario {
 
 	read_aircraft(data) {
 		let names = Object.keys(data);
-		for (i=0; i<names.length; i++) {
+		for (let i=0; i<names.length; i++) {
 			let name = names[i];
 			this.aircrafts[name] = new Aircraft(
 				name, 

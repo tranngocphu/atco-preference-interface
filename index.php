@@ -1,3 +1,14 @@
+<?php 
+$exercise_dir = 'data/scenarios/';
+$exercises = scandir($exercise_dir);
+$exercises = array_slice($exercises, 2);
+$selections = array();
+foreach ($exercises as $ex) {
+    $selections[$ex] = str_replace(".json", "", $ex);
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -14,18 +25,35 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid">         
+    
+        <div class="row">
+            <div class="col-3">
+                <span>Please enter Your Name:</span>
+                <input type="text" id="user" name="user" val=""></input>
+            </div>
+            <div class="col-3">
+                <span>And choose an exercise:</span>
+                <select id="exercise" onchange="request_exercise(this.value);">
+                    <option value=""></option>
+                    <?php foreach ($selections as $key=>$val) : ?>
+                    <option value="<?= $key ?>"><?= $val ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="col-3">Scenario index: <span id="current-index"></span></div>
+            <div class="col-3">Status: <span id="status"></span></div>
+        </div>         
         <div class="row h-100">
 
-            <div class="col-2 my-auto text-center">
-                <div>
+            <div class="col-2 my-auto text-center">                           
+                <div>                    
                     <button type="button" id="back-btn" class="btn-lg" onclick="navigate(0);">SAVE<br><span class="nav-btn-text">&#171;</span></button>
-                </div>
-            </div>           
-            
-            <div class="col-8 my-auto text-center">   
-                <div>Scenario index: <span id="current-index"></span></div>             
-                <canvas id="airspace" width="900" height="900"></canvas>                 
+                </div>                
+            </div>
+
+            <div class="col-8 text-center">                  
+                <canvas id="airspace" width="900" height="900"></canvas>                
             </div>            
             
             <div class="col-2 my-auto text-center">

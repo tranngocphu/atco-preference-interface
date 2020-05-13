@@ -3,6 +3,16 @@
  * @param {*} next next=1 or 0
  */
 function navigate(next) {
+    if ( !$('#user').val() ) {
+        alert("Please enter Your Name to continue.");
+        return
+    }
+
+    if ( !$('#exercise').val() ) { 
+        alert("You must choose an exercise to continue.");
+        return
+    }
+
     if (next) {
         if (index<n-1) {
             index += 1;
@@ -44,4 +54,28 @@ function remove_all() {
  */
 function show_data(data) {
     $('#data').html(JSON.stringify(data));
+}
+
+
+/**
+ * Function to request exercise data from the server
+ * @param {*} name 
+ */
+function request_exercise(name) {
+    remove_all();
+    data = null;
+    n = null;
+    index = -1;    
+    $.get( "/handlers/load.php", {exercise: $('#exercise').val()} )
+        .done(function( response ) {
+            response = JSON.parse(response);
+            if ( response.status ) {
+                $('#status').html(response.msg);
+                data = JSON.parse(response.data);
+                n = data.length;
+                $('#current-index').html(`/${n}`);
+            }                
+            else
+                alert(response) 
+        })
 }
