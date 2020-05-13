@@ -33,6 +33,9 @@ const AIRWAY_LINE_WIDTH = 0.5;
 const AIRWAY_LINE_COLOR = '#8f8f8f';
 const AIRCRAFT_SYMBOL_SIZE = 7;
 const AIRCRAFT_SYMBOL_COLOR = '#ffffff';
+const AIRCRAFT_SYMBOL_ALERT_COLOR = '#15ff00';
+const AIRCRAFT_CPA_ALERT_SIZE = 3;
+const AIRCRAFT_CPA_ALERT_COLOR = 'red';
 const AIRCRAFT_PROJECTION_LENGTH = 40;
 const AIRCRAFT_PROJECTION_WIDTH = 1.5;
 const AIRCRAFT_PROJECTION_COLOR = '#ffffff';
@@ -40,6 +43,19 @@ const AIRCRAFT_VECTORING_COLOR = 'yellow';
 const AIRCRAFT_VECTORING_WIDTH = 4;
 const TEXT_COLOR = 'yellow';
 const TEXT_SIZE = 18;
+
+
+/** SCALING AND CONVERSION */
+const AIRSPACE_SIZE = 100; // in NM unit
+const NM2POINT = PAPER_SIZE / AIRSPACE_SIZE;  // convert nautical miles to drawing points
+const POINT2NM = AIRSPACE_SIZE / PAPER_SIZE;  // convert drawing points to nautical miles
+const KTS2POINTSEC = NM2POINT*3600;           // convert knots to point/second
+
+/** ATC SETTINGS */
+const DCT_TEXT = "DCT this Waypoint";
+const CONSTANT_SPEED = 500*KTS2POINTSEC;      // default constant speed in points per second
+const SEPARATION_MINIMA = 5*NM2POINT;         // separation standard in points
+
 
 
 /*************************************************/
@@ -57,6 +73,7 @@ let airway_layer     = new Layer();
 let aircraft_layer   = new Layer();
 let maneuver_layer   = new Layer();
 let graphic_layer    = new Layer();
+let conflict_layer   = new Layer();
 let text_layer       = new Layer();
 
 // Add a rectangle as a bg layer

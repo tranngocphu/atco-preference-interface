@@ -14,10 +14,11 @@
  * -----
  */
 
+
+
 /** 
  * WAYPOINT CLASS
  */
-
 class Waypoint {
 	/**
 	 * 
@@ -50,30 +51,27 @@ class Waypoint {
 	}
 
 	/** STATIC METHODS */
-	static mouse_enter(event, name) {
-		console.log("Mouse entered waypoint", name);
+	static mouse_enter(event, name) {		
 		if (is_vectoring) {
-			ac.anotation.content = "Direct to this waypoint."; 
+			ac.annotation.content = DCT_TEXT;
 		}
-	}	
-	
-	static mouse_leave(event, name) {
-		console.log("Mouse left waypoint", name);
 	}
 	
-	static mouse_move(event, name) {
-		console.log("Mouse moving on waypoint", name);
+	static mouse_leave(event, name) {		
+	}
+	
+	static mouse_move(event, name) {		
 		if (is_vectoring) {
-			ac.anotation.content = "Direct to this waypoint."; 
+			ac.annotation.content = DCT_TEXT;
 		}
 	}
 }
 
 
+
 /** 
  * AIRWAY CLASS
  */
-
 class Airway {	
 	/**
 	 * 
@@ -93,10 +91,10 @@ class Airway {
 }
 
 
+
 /** 
  * AIRCRAFT CLASS
  */
-
 class Aircraft {
 	/**
 	 * 
@@ -108,18 +106,20 @@ class Aircraft {
 	 */
 	constructor(name, x, y, dir_x, dir_y) {
 		this.name = name;
+		this.speed = CONSTANT_SPEED;
 		this.x = x;
 		this.y = y;
 		this.dir_x = dir_x;
 		this.dir_y = dir_y;
-		this.symbol = new AircraftLocationSymbol(name, x, y);		
+		this.symbol = new AircraftLocationSymbol(name, x, y);
 		let projection_x = x + dir_x * AIRCRAFT_PROJECTION_LENGTH;
-		let projection_y = y + dir_y * AIRCRAFT_PROJECTION_LENGTH;		
-		this.projection = new AircraftProjectionLine(name, [x,y], [projection_x,projection_y]);
-		this.vectoring = new AircraftVectoringLine(name, [x,y], [x,y]);	
-		this.anotation = new AircraftVectoringText();
+		let projection_y = y + dir_y * AIRCRAFT_PROJECTION_LENGTH;
+		this.projection = new AircraftProjectionLine(name, [x,y], [projection_x, projection_y]);
 		this.angle = this.projection.angle();
-		
+		this.vectoring = new AircraftVectoringLine(name, [x,y], [projection_x, projection_y]);
+		this.annotation = new AircraftVectoringText();		
+		this.in_conflict = false;
+		this.conflict_markers = {};
 		this.symbol.onMouseDown = function(event) {
 			Aircraft.mouse_down(this.name);
 		}
@@ -134,17 +134,69 @@ class Aircraft {
 		}
 	}
 
-	/** STATIC METHODS */
 
+	/**
+	 * Change color of aircraft symbol depending on conflict situation
+	 * @param {Boolean} conflict indicates if there's a conflict
+	 */
+	alert(conflict, cpa_x, cpa_y, intruder_name) {		
+		if (conflict) {			
+			this.conflict_markers[intruder_name] = new AircraftCPAMarker(cpa_x, cpa_y);
+		}
+		else {
+			if ( intruder_name in this.conflict_markers ) {
+				this.conflict_markers[intruder_name].remove();
+				delete this.conflict_markers[intruder_name];
+			}
+		}
+		let intruder_count = Object.keys(this.conflict_markers).length;
+		this.symbol.fillColor = intruder_count > 0 ? AIRCRAFT_SYMBOL_ALERT_COLOR : AIRCRAFT_SYMBOL_COLOR; 
+	}
+
+
+
+	/**
+	 * Detect conflict between this aircraft and another one
+	 * @param {*} ac the aircraft to be detected with this aircraft
+	 * @param {Boolean} mode mode=false detection using this projection, or mode=true using this vectoring
+	 */
+	is_conflict(ac, mode=false) {			
+		let conflict, cpa_closure, cpa_point_0, cpa_point_1;
+		let p0 = math.matrix(this.symbol.position.coords());
+		let v0 = mode ? math.matrix(this.vectoring.getTangentAt(0).coords()) : math.matrix(this.projection.getTangentAt(0).coords());
+		let p1 = math.matrix(ac.symbol.position.coords());
+		let v1 = math.matrix(ac.projection.getTangentAt(0).coords());
+		console.log(p0, v0, p1, v1);
+		let w0 = math.subtract(p0, p1);
+		let dv = math.subtract(math.multiply(v0, this.speed), math.multiply(v1, ac.speed));
+		let time2cpa = -(math.dot(w0, dv)) / (math.norm(dv) * math.norm(dv));			
+		if (time2cpa > 0) {			
+			cpa_point_0 = math.add(p0, math.multiply(v0, this.speed * time2cpa));
+			cpa_point_1 = math.add(p1, math.multiply(v1,   ac.speed * time2cpa));								
+			cpa_closure = math.distance(cpa_point_0, cpa_point_1);
+		} else {			
+			cpa_closure = math.norm(w0);
+			cpa_point_0 = p0;
+			cpa_point_1 = p1;
+		}
+		console.log(SEPARATION_MINIMA, cpa_closure);
+		conflict = cpa_closure < SEPARATION_MINIMA ? true : false;
+		this.alert(conflict, math.subset(cpa_point_0, math.index(0)), math.subset(cpa_point_0, math.index(1)), ac.name);
+		ac.alert(conflict, math.subset(cpa_point_1, math.index(0)), math.subset(cpa_point_1, math.index(1)), this.name);
+	}
+
+
+	/** STATIC METHODS */
 	static mouse_down(name) {
+		console.log(name);
 		is_vectoring = true; // enter vectoring mode on mouse down an aircraft
 		if (ac) {
 			ac.vectoring.visible = false; // show vectoring maneuver line
-			ac.anotation.visible = false; // show anotation				
+			ac.annotation.visible = false; // show annotation				
 		}
 		ac = aircrafts[name];
 		ac.vectoring.visible = true; // show vectoring maneuver line
-		ac.anotation.visible = true; // show anotation				
+		ac.annotation.visible = true; // show annotation				
 	}
 	
 	static mouse_up(name) {		
@@ -155,25 +207,25 @@ class Aircraft {
 		let turn_angle = Math.round(event.point.subtract(ac.projection.firstSegment.point).angle - ac.angle);
 		turn_angle = turn_angle < 0 ? 360 + turn_angle : turn_angle;
 		turn_angle = turn_angle <= 180 ? turn_angle : turn_angle - 360;
-		let normal = ac.vectoring.getNormalAt(ac.vectoring.length/2).multiply(30);
-		let prefix = turn_angle < 0 ? 'Turn left ' : 'Turn right ';	
-		prefix = turn_angle == 0 ? '' : prefix;
 		if ( -90 < turn_angle & turn_angle < 90 ) {
 			is_vectoring = true;
+			let normal = ac.vectoring.getNormalAt(ac.vectoring.length/2).multiply(30);
+			let prefix = turn_angle < 0 ? 'Turn left ' : 'Turn right ';	
+			prefix = turn_angle == 0 ? '' : prefix;			
 			ac.vectoring.lastSegment.point = event.point; // update maneuver line										
-			ac.anotation.point = ac.vectoring.lastSegment.point.add(normal);					
-			ac.anotation.content = prefix + Math.abs(Math.round(turn_angle)) + '°';
-			// ac.anotation.content = Math.round(ac.angle) + "   " + Math.round(event.point.subtract(ac.projection.firstSegment.point).angle) + "   " + turn_angle;
+			ac.annotation.point = ac.vectoring.lastSegment.point.add(normal);					
+			ac.annotation.content = prefix + Math.abs(Math.round(turn_angle)) + '°';			
 		} else {
 			is_vectoring = false;
 		}
 	}
 }
 
+
+
 /** 
  * SCENARIO CLASS
  */
-
 class Scenario {
 	/**
 	 * 
@@ -182,5 +234,4 @@ class Scenario {
 	constructor(data) {
 
 	}
-
 }

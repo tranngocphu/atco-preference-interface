@@ -15,6 +15,15 @@
  */
 
 
+
+ /** Add a method returning JS array of x,y for a Paperjs Point */
+
+Point.prototype.coords = function() {
+    return [this.x, this.y]
+}
+
+
+
 /**
  *  Define the graphic symbol of a waypoint.
  *  This extends the Raster class of Paperjs. * 
@@ -153,5 +162,28 @@ class AircraftVectoringText extends PointText {
             fontFamily: 'sans-serif',
             fontSize: TEXT_SIZE            
         })        
+    }
+}
+
+
+/**
+ * Define the graphical indicator of CPA location
+ * This extends the Path.Circle of Paperjs
+ */
+class AircraftCPAMarker extends Path.Circle {
+    /**
+     * 
+     * @param {*} start 
+     * @param {*} end 
+     */
+    constructor(x, y) {
+        conflict_layer.activate();
+        super({
+            center: [x, y],
+            radius: AIRCRAFT_CPA_ALERT_SIZE,
+            strokeWidth: 0,
+            fillColor: AIRCRAFT_CPA_ALERT_COLOR,
+        })
+        this.visible = true;
     }
 }
