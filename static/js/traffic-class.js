@@ -120,6 +120,7 @@ class Aircraft {
 		this.annotation = new AircraftVectoringText();		
 		this.in_conflict = false;
 		this.conflict_markers = {};
+		this.cpa_connectors = {};
 		this.symbol.onMouseDown = function(event) {
 			Aircraft.mouse_down(this.name);			
 		}
@@ -149,16 +150,22 @@ class Aircraft {
 		if (conflict) {	
 			if ( intruder_name in this.conflict_markers ) {				
 				this.conflict_markers[intruder_name].position = [cpa_x, cpa_y];
+				this.cpa_connectors[intruder_name].segments = [this.symbol.position, [cpa_x, cpa_y]];
 			} else {
 				this.conflict_markers[intruder_name] = new AircraftCPAMarker(cpa_x, cpa_y);
-			}					
+				this.cpa_connectors[intruder_name] = new AircraftCPAConnector(this.symbol.position, [cpa_x, cpa_y]);
+			}
+			this.conflict_markers[intruder_name].visible = INDICATOR;	
+			this.cpa_connectors[intruder_name].visible = INDICATOR;
 		}
 		else if ( intruder_name in this.conflict_markers ) {				
 			this.conflict_markers[intruder_name].remove();
+			this.cpa_connectors[intruder_name].remove();
 			delete this.conflict_markers[intruder_name];
+			delete this.cpa_connectors[intruder_name];
 		}
 		let intruder_count = Object.keys(this.conflict_markers).length;
-		this.symbol.fillColor = intruder_count > 0 ? AIRCRAFT_SYMBOL_ALERT_COLOR : AIRCRAFT_SYMBOL_COLOR; 
+		this.symbol.fillColor = (INDICATOR & intruder_count > 0) ? AIRCRAFT_SYMBOL_ALERT_COLOR : AIRCRAFT_SYMBOL_COLOR; 
 	}
 
 
@@ -233,7 +240,8 @@ class Aircraft {
 		ac = scenario.aircrafts[name];
 		ac.vectoring.segments = ac.projection.segments;
 		ac.vectoring.visible = false;
-		ac.annotation.visible = false;			
+		ac.annotation.visible = false;
+		scenario.detect_conflict(true);
 	}
 }
 

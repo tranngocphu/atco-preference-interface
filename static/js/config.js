@@ -36,6 +36,9 @@ const AIRCRAFT_SYMBOL_COLOR = '#ffffff';
 const AIRCRAFT_SYMBOL_ALERT_COLOR = '#15ff00';
 const AIRCRAFT_CPA_ALERT_SIZE = 3;
 const AIRCRAFT_CPA_ALERT_COLOR = 'red';
+const AIRCRAFT_CPA_CONNECTOR_WIDTH = 0.8;
+const AIRCRAFT_CPA_CONNECTOR_DASH = [10,3];
+const AIRCRAFT_CPA_CONNECTOR_COLOR = '#ff2ba7';
 const AIRCRAFT_PROJECTION_LENGTH = 40;
 const AIRCRAFT_PROJECTION_WIDTH = 1.5;
 const AIRCRAFT_PROJECTION_COLOR = '#ffffff';
@@ -52,6 +55,7 @@ const POINT2NM = AIRSPACE_SIZE / PAPER_SIZE;  // convert drawing points to nauti
 const KTS2POINTSEC = NM2POINT*3600;           // convert knots to point/second
 
 /** ATC SETTINGS */
+let INDICATOR = true;
 const DCT_TEXT = "DCT this Waypoint";
 const CONSTANT_SPEED = 500*KTS2POINTSEC;      // default constant speed in points per second
 const SEPARATION_MINIMA = 5*NM2POINT;         // separation standard in points
@@ -70,10 +74,10 @@ view.Size = [PAPER_WIDTH, PAPER_HEIGHT];
 let background_layer = new Layer();
 let waypoint_layer   = new Layer();
 let airway_layer     = new Layer();
-let aircraft_layer   = new Layer();
-let maneuver_layer   = new Layer();
 let graphic_layer    = new Layer();
 let conflict_layer   = new Layer();
+let maneuver_layer   = new Layer();
+let aircraft_layer   = new Layer();
 let text_layer       = new Layer();
 
 // Add a rectangle as a bg layer

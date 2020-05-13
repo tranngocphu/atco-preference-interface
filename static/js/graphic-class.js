@@ -107,6 +107,7 @@ class AircraftProjectionLine extends Path.Line {
             strokeWidth: AIRCRAFT_PROJECTION_WIDTH,
         });        
         this.name = name;
+        this.sendToBack();
         this.angle = function() {
             let diff = this.lastSegment.point.subtract(this.firstSegment.point);
             return diff.angle                     
@@ -184,6 +185,31 @@ class AircraftCPAMarker extends Path.Circle {
             strokeWidth: 0,
             fillColor: AIRCRAFT_CPA_ALERT_COLOR,
         })
-        this.visible = true;
+        this.visible = INDICATOR;
+    }
+}
+
+
+/**
+ * Define the graphical indicator of CPA location
+ * This extends the Path.Circle of Paperjs
+ */
+class AircraftCPAConnector extends Path.Line {
+    /**
+     * 
+     * @param {*} start 
+     * @param {*} end 
+     */
+    constructor(start, end) {
+        conflict_layer.activate();
+        super({
+            from: start,
+            to: end,
+            strokeColor: AIRCRAFT_CPA_CONNECTOR_COLOR,
+            strokeWidth: AIRCRAFT_CPA_CONNECTOR_WIDTH,
+            dashArray: AIRCRAFT_CPA_CONNECTOR_DASH
+        })
+        this.visible = INDICATOR;
+        this.sendToBack();
     }
 }
