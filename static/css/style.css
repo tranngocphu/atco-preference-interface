@@ -23,3 +23,8 @@
 #next-btn  {
 	padding-top: 25px;
 }
+
+#status {
+	color: blue;
+	font-weight: bolder;
+}
