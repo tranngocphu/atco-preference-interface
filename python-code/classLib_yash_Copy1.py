@@ -85,6 +85,7 @@ class Aircraft:
         # self.dir_x = (self.end_x - self.start_x) / self.segment
         # self.dir_y = (self.end_y - self.start_y) / self.segment
     
+    
 import matplotlib.pyplot as plt
 class Scenario:
     waypoints=[]
