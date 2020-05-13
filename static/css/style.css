@@ -16,13 +16,9 @@
 
 
 .nav-btn-text {
-	font-size: 40pt;
+	font-size: 12pt;
 }
 
-#back-btn,
-#next-btn  {
-	padding-top: 25px;
-}
 
 #status {
 	color: blue;

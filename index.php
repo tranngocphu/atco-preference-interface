@@ -28,9 +28,9 @@ foreach ($exercises as $ex) {
     <div class="container-fluid">         
     
         <div class="row">
-            <div class="col-5">
+            <div class="col-4">
                 <span>Name:</span>
-                <input type="text" id="user" name="user" size="20"></input>
+                <input type="text" id="user" name="user" size="12"></input>
                 <span>Exercise:</span>
                 <select id="exercise" onchange="request_exercise(this.value);">
                     <option value=""></option>
@@ -44,7 +44,7 @@ foreach ($exercises as $ex) {
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>Status: <span id="status"></span></span>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <input type="checkbox" id="waypoint-cb" name="" value="" checked>Waypoints
                 &nbsp;
                 <input type="checkbox" id="airway-cb" name="" value="" checked>Airways
@@ -55,7 +55,7 @@ foreach ($exercises as $ex) {
 
             <div class="col-1 my-auto text-center">                           
                 <div>                    
-                    <button type="button" id="back-btn" class="btn-lg" onclick="navigate(0);">SAVE<br><span class="nav-btn-text">&#171;</span></button>
+                    <button type="button" id="back-btn" class="btn-lg" onclick="navigate(0);" disabled><span class="nav-btn-text">SAVE<br>&#xbb;<br>BACK</span></button>
                 </div>                
             </div>
 
@@ -65,7 +65,7 @@ foreach ($exercises as $ex) {
             
             <div class="col-1 my-auto text-center">
                 <div >
-                    <button type="button" id="next-btn" class="btn-lg" onclick="navigate(1);">SAVE<br><span class="nav-btn-text">&#xbb;</span></button>
+                    <button type="button" id="next-btn" class="btn-lg" onclick="navigate(1);" disabled><span class="nav-btn-text">SAVE<br>&#xbb;<br>NEXT</span></button>
                 </div>
             </div>  
 

@@ -64,6 +64,8 @@ function show_data(data) {
  * @param {*} name 
  */
 function request_exercise(name) {
+    $('#next-btn').prop('disabled', true);
+    $('#back-btn').prop('disabled', true);
     remove_all();
     data = null;
     n = null;
@@ -72,10 +74,12 @@ function request_exercise(name) {
         .done(function( response ) {
             response = JSON.parse(response);
             if ( response.status ) {
-                $('#status').html(response.msg);
+                $('#status').html(`${$('#exercise').val()} loaded.`);
                 data = JSON.parse(response.data);
                 n = data.length;
                 $('#current-index').html(`/${n}`);
+                $('#next-btn').prop('disabled', false);
+                $('#back-btn').prop('disabled', false);
             }                
             else
                 alert(response) 
