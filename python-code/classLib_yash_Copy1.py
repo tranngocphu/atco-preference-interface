@@ -62,8 +62,7 @@ class Airways:
              
     def __str__(self):
         return self.start_wp +'start coords' + str(self.start_wp_x) + str(self.start_wp_y) +  self.end_wp
-        # self.endPoint= self.end_wp_x, self.end_wp_y
-        # return self.startPoint, self.endPoint
+        
 
     
 
@@ -86,3 +85,30 @@ class Aircraft:
         # self.dir_x = (self.end_x - self.start_x) / self.segment
         # self.dir_y = (self.end_y - self.start_y) / self.segment
     
+import matplotlib.pyplot as plt
+class Scenario:
+    waypoints=[]
+    airways=[]
+    
+    def __init__(self,waypointlist,airwaylist):
+        self.waypoints= waypointlist
+        self.airways= airwaylist
+            
+    def waypointinfo(self):
+        for i in range(len(self.waypoints)):
+            Scenario.waypoints.append( [self.waypoints[i].name,self.waypoints[i].x, self.waypoints[i].y])
+        return Scenario.waypoints   
+
+    def airwayinfo(self):
+        for j in range(len(self.airways)):
+            Scenario.airways.append([self.airways[j].start_wp_x, self.airways[j].start_wp_y,self.airways[j].end_wp_x,self.airways[j].end_wp_y])
+        return Scenario.airways
+
+    def plot(self):
+        for i in range(len(Scenario.waypoints)):
+          plt.scatter(Scenario.waypoints[i][1],Scenario.waypoints[i][2])
+        #   for i,n in enumerate(Scenario.waypoints):
+        #   plt.annotate(Scenario.waypoints[i][0],Scenario.waypoints[i][1],Scenario.waypoints[i][2])
+        for j in range(len(Scenario.airways)):
+            plt.plot([Scenario.airways[j][0],Scenario.airways[j][1]],[Scenario.airways[j][2],Scenario.airways[j][3]])
+        return plt.show()
