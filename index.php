@@ -55,7 +55,7 @@ foreach ($exercises as $ex) {
 
             <div class="col-1 my-auto text-center">                           
                 <div>                    
-                    <button type="button" id="back-btn" class="btn-lg" onclick="navigate(0);" disabled><span class="nav-btn-text">SAVE<br>&#xbb;<br>BACK</span></button>
+                    <button type="button" id="back-btn" class="btn-lg" onclick="navigate(0);" disabled><span class="nav-btn-text">BACK<br>&#xAB;<br>SAVE</span></button>
                 </div>                
             </div>
 
@@ -65,7 +65,7 @@ foreach ($exercises as $ex) {
             
             <div class="col-1 my-auto text-center">
                 <div >
-                    <button type="button" id="next-btn" class="btn-lg" onclick="navigate(1);" disabled><span class="nav-btn-text">SAVE<br>&#xbb;<br>NEXT</span></button>
+                    <button type="button" id="next-btn" class="btn-lg" onclick="navigate(1);" disabled><span class="nav-btn-text">NEXT<br>&#xbb;<br>SAVE</span></button>
                 </div>
             </div>  
 
