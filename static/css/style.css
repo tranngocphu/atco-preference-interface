@@ -13,3 +13,14 @@
  * Modified By: Phu N. Tran
  * -----
  */
+
+
+.nav-btn-text {
+	font-size: 12pt;
+}
+
+
+#status {
+	color: blue;
+	font-weight: bolder;
+}
