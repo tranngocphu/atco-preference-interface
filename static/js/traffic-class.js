@@ -136,14 +136,17 @@ class Aircraft {
 		this.symbol.onMouseDrag = function(event) {
 			Aircraft.mouse_drag(this.name, event);
 		}
-		this.vectoring.onMouseDrag = function(event) {
-			Aircraft.mouse_drag(this.name, event);
-		}
 		this.symbol.onDoubleClick = function(event) {
 			Aircraft.double_click(this.name, event);
 		}
+		this.vectoring.onMouseDown = function(event) {
+			Aircraft.mouse_down(this.name);
+		}
 		this.vectoring.onDoubleClick = function(event) {
 			Aircraft.double_click(this.name, event);
+		}
+		this.vectoring.onMouseDrag = function(event) {
+			Aircraft.mouse_drag(this.name, event);
 		}
 	}
 
