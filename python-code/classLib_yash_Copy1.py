@@ -15,8 +15,8 @@ class Airways:
     def __init__(self, name, start, end):
         """here 'start' and 'end' are waypoint objects"""
         self.name=name
-        self.start_wp = start.name
-        self.end_wp = end.name
+        self.start_wp = start
+        self.end_wp = end
         self.start_wp_x = start.x
         self.start_wp_y = start.y
         self.end_wp_x = end.x
@@ -61,8 +61,8 @@ class Airways:
         return self.location
              
     def __str__(self):
-        return self.start_wp +'start coords' + str(self.start_wp_x) + str(self.start_wp_y) +  self.end_wp
-        
+        return self.name +': '+ ' start coords ' + ' '+ str(self.start_wp_x) +' '+ str(self.start_wp_y) 
+         
 
 
 
@@ -95,7 +95,7 @@ class Scenario:
         self.waypoints= waypointlist
         self.airways= airwaylist
             
-    def waypointinfo(self):
+    def waypointinfo(self): #this is to update the list 'waypoints
         for i in range(len(self.waypoints)):
             Scenario.waypoints.append( [self.waypoints[i].name,self.waypoints[i].x, self.waypoints[i].y])
         return Scenario.waypoints   
@@ -106,10 +106,13 @@ class Scenario:
         return Scenario.airways
 
     def plot(self):
+        names=[]
         for i in range(len(Scenario.waypoints)):
           plt.scatter(Scenario.waypoints[i][1],Scenario.waypoints[i][2])
-        #   for i,n in enumerate(Scenario.waypoints):
-        #   plt.annotate(Scenario.waypoints[i][0],Scenario.waypoints[i][1],Scenario.waypoints[i][2])
+          names.append(Scenario.waypoints[i][0])
+        for i,n in enumerate(names):
+             plt.annotate(n,(Scenario.waypoints[i][1],Scenario.waypoints[i][2]+0.02))
         for j in range(len(Scenario.airways)):
-            plt.plot([Scenario.airways[j][0],Scenario.airways[j][1]],[Scenario.airways[j][2],Scenario.airways[j][3]])
+            plt.plot([Scenario.airways[j][0],Scenario.airways[j][2]],[Scenario.airways[j][1],Scenario.airways[j][3]])
+        
         return plt.show()

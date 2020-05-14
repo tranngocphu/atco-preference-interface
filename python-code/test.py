@@ -55,3 +55,7 @@ for i in range(ac_per_scenario):
     aircraft= Aircraft(aircraft_name[i],point)
     aircraftList.append(aircraft)
 
+
+d= Scenario(waypointList,airwayList)
+d.plot()
+plt.show()
