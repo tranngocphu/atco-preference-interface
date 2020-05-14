@@ -89,6 +89,25 @@ class AircraftLocationSymbol extends Path.Circle {
 }
 
 /**
+ * Define the graphic line of the aircraft's trails
+ */
+class AircraftTrailLine extends Path.Line {
+    constructor(name, x, y, dir_x, dir_y) {
+        let trail_x = x - dir_x * AIRCRAFT_TRAIL_LENGTH;
+        let trail_y = y - dir_y * AIRCRAFT_TRAIL_LENGTH;
+        aircraft_layer.activate();
+        super({            
+            from: [trail_x, trail_y],
+            to: [x,y],
+            strokeColor: AIRCRAFT_TRAIL_COLOR,
+            strokeWidth: AIRCRAFT_TRAIL_WIDTH,
+            dashArray: AIRCRAFT_TRAIL_DASH
+        }); 
+        this.name = name;
+    }
+}
+
+/**
  * Define the graphic symbol of an aircraft path projection
  * This extends the Path.Line of Paperjs
  */
@@ -98,11 +117,13 @@ class AircraftProjectionLine extends Path.Line {
      * @param {*} start 
      * @param {*} end 
      */
-    constructor(name, start, end) {
+    constructor(name, x, y, dir_x, dir_y) {        
+        let projection_x = x + dir_x * AIRCRAFT_PROJECTION_LENGTH;
+        let projection_y = y + dir_y * AIRCRAFT_PROJECTION_LENGTH;
         aircraft_layer.activate();
         super({
-            from: start,
-            to: end,
+            from: [x,y],
+            to: [projection_x,projection_y],
             strokeColor: AIRCRAFT_PROJECTION_COLOR,
             strokeWidth: AIRCRAFT_PROJECTION_WIDTH,
         });        

@@ -115,12 +115,11 @@ class Aircraft {
 		this.y = y;
 		this.dir_x = dir_x;
 		this.dir_y = dir_y;
-		this.symbol = new AircraftLocationSymbol(name, x, y);
-		let projection_x = x + dir_x * AIRCRAFT_PROJECTION_LENGTH;
-		let projection_y = y + dir_y * AIRCRAFT_PROJECTION_LENGTH;
-		this.projection = new AircraftProjectionLine(name, [x,y], [projection_x, projection_y]);
+		this.trail = new AircraftTrailLine(name, x, y, dir_x, dir_y);				
+		this.projection = new AircraftProjectionLine(name, x, y, dir_x, dir_y);
 		this.angle = this.projection.angle();
-		this.vectoring = new AircraftVectoringLine(name, [x,y], [projection_x, projection_y]);
+		this.vectoring = new AircraftVectoringLine(name, this.projection.firstSegment.point, this.projection.lastSegment.point);
+		this.symbol = new AircraftLocationSymbol(name, x, y);
 		this.annotation = new AircraftVectoringText();		
 		this.in_conflict = false;
 		this.conflict_markers = {};
