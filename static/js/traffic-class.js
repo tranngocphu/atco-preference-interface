@@ -43,10 +43,14 @@ class Waypoint {
 		}
 		this.symbol.onMouseLeave = function(event) {			
 			this.scale(0.5, 0.5);
+<<<<<<< HEAD
 			Waypoint.mouse_leave(event, this.name);	
 			if (is_vectoring) {
 				ac.update_dct();				
 			}		
+=======
+			Waypoint.mouse_leave(event, this.name);		
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 		}
 		this.symbol.onMouseMove = function(event) {
 			Waypoint.mouse_move(event, this.name);
@@ -59,11 +63,24 @@ class Waypoint {
 
 	/** STATIC METHODS */
 	static mouse_enter(event, name) {		
+<<<<<<< HEAD
 
 	}
 	
 	static mouse_leave(event, name) {		
 
+=======
+		if (is_vectoring) {
+			ac.annotation.content = DCT_TEXT;
+			ac.update_dct(name);
+		}
+	}
+	
+	static mouse_leave(event, name) {		
+		if (is_vectoring) {
+			ac.update_dct(null);
+		}
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 	}
 	
 	static mouse_move(event, name) {		
@@ -127,7 +144,11 @@ class Aircraft {
 		this.in_conflict = false;
 		this.conflict_markers = {};
 		this.cpa_connectors = {};
+<<<<<<< HEAD
 		this.resolution = { "turn_angle" : 0, "dct" : null };
+=======
+		this.reset_resolution();
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 		/** Event */
 		this.symbol.onMouseDown = function(event) {
 			Aircraft.mouse_down(this.name);			
@@ -147,6 +168,7 @@ class Aircraft {
 		this.vectoring.onDoubleClick = function(event) {
 			Aircraft.double_click(this.name, event);
 		}
+<<<<<<< HEAD
 	}
 
 
@@ -155,6 +177,8 @@ class Aircraft {
 	 */
 	reset_resolution() {
 		this.resolution = { "turn_angle" : 0, "dct" : null };		
+=======
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 	}
 
 	update_angle(angle) {
@@ -163,6 +187,27 @@ class Aircraft {
 
 	update_dct(waypoint_name=null) {
 		this.resolution.dct = waypoint_name;		
+	}
+
+
+
+	/**
+	 * Resolution update
+	 */
+	reset_resolution() {
+		this.resolution = { "turn_angle" : null, "dct" : null, "last_position": null };
+	}
+
+	update_angle(angle) {
+		this.resolution.turn_angle = angle;				
+	}
+
+	update_dct(waypoint_name) {
+		this.resolution.dct = waypoint_name;		
+	}
+
+	update_position(x,y) {
+		this.resolution.last_position = [x,y];
 	}
 
 
@@ -245,6 +290,10 @@ class Aircraft {
 		turn_angle = turn_angle <= 180 ? turn_angle : turn_angle - 360;		
 		if ( -90 < turn_angle & turn_angle < 90 ) {
 			ac.update_angle(turn_angle);
+<<<<<<< HEAD
+=======
+			ac.update_position(event.point.x, event.point.y);
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 			is_vectoring = true;
 			let normal = ac.vectoring.getNormalAt(ac.vectoring.length/2).multiply(30);
 			let prefix = turn_angle < 0 ? 'L' : 'R';	
@@ -289,7 +338,12 @@ class Scenario {
 		this.read_waypoint(data.waypoints);
 		this.read_airway(data.airways);
 		this.read_aircraft(data.aircrafts);
+<<<<<<< HEAD
 		this.detect_conflict(false);
+=======
+		this.load_resolution_history();
+		this.detect_conflict(true);
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 	}
 
 	read_waypoint(data) {
@@ -298,6 +352,7 @@ class Scenario {
 			let name = names[i];
 			this.waypoints[name] = new Waypoint(name, data[name].x, data[name].y);
 		}		
+<<<<<<< HEAD
 	}
 
 	read_airway(data) {
@@ -312,6 +367,22 @@ class Scenario {
 		}
 	}
 
+=======
+	}
+
+	read_airway(data) {
+		let names = Object.keys(data);
+		for (let i=0; i<names.length; i++) {
+			let name = names[i];
+			this.airways[name] = new Airway(
+				name, 
+				this.waypoints[data[name].start],
+				this.waypoints[data[name].end]
+			);
+		}
+	}
+
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 	read_aircraft(data) {
 		let names = Object.keys(data);
 		for (let i=0; i<names.length; i++) {
@@ -326,6 +397,23 @@ class Scenario {
 		}	
 	}
 
+<<<<<<< HEAD
+=======
+	load_resolution_history() {
+		let resolution = resolutions[index]; // the resolution to be reloaded
+		// console.log(index, resolution);
+		let names = Object.keys(resolution);
+		for (let i=0; i<names.length; i++) {
+			let name = names[i];
+			if ( resolution[name].last_position != null ) {
+				this.aircrafts[name].resolution = resolution[name]; // write history back to the aircraft resolution 
+				this.aircrafts[name].vectoring.lastSegment.point = resolution[name].last_position; // load last position of vectoring
+				this.aircrafts[name].vectoring.visible = true; // show vectoring
+			}
+		}
+	}
+
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 
 	/**
 	 * 

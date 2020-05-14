@@ -61,6 +61,11 @@ let INDICATOR = true;
 const DCT_TEXT = "DCT this Waypoint";
 const CONSTANT_SPEED = 500*KTS2POINTSEC;      // default constant speed in points per second
 const SEPARATION_MINIMA = 5*NM2POINT;         // separation standard in points
+let EMPTY_RESOLUTION = { 
+    "turn_angle" : null, 
+    "dct" : null, 
+    "last_position": null 
+};
 
 
 
@@ -98,6 +103,10 @@ let data = null; // the data object storing all scenarios loaded
 let n = null; // the total number of scenarios loaded
 let index = -1; // index of the current scenario in the data array
 let scenario = null; // the scenario being shown to the user
+<<<<<<< HEAD
+=======
+let resolutions; // global resolutions for history view 
+>>>>>>> e58740ea3b9bf6c9746ef6279ada3124ac6c407c
 let ac = null; // the last selected AC by mouse click
 let is_vectoring = false;  // indicating if the user is vectoring an aircraft
 let save_count = 0;
