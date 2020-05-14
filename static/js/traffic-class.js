@@ -35,18 +35,11 @@ class Waypoint {
 		this.airways = [];
 		this.symbol.onMouseEnter = function(event) {			
 			this.scale(2,2);			
-			Waypoint.mouse_enter(event, this.name);		
-			if (is_vectoring) {
-				ac.annotation.content = DCT_TEXT;
-				ac.update_dct(this.name);				
-			}	
+			Waypoint.mouse_enter(event, this.name);			
 		}
 		this.symbol.onMouseLeave = function(event) {			
 			this.scale(0.5, 0.5);
-			Waypoint.mouse_leave(event, this.name);	
-			if (is_vectoring) {
-				ac.update_dct();				
-			}		
+			Waypoint.mouse_leave(event, this.name);		
 		}
 		this.symbol.onMouseMove = function(event) {
 			Waypoint.mouse_move(event, this.name);
@@ -59,11 +52,16 @@ class Waypoint {
 
 	/** STATIC METHODS */
 	static mouse_enter(event, name) {		
-
+		if (is_vectoring) {
+			ac.annotation.content = DCT_TEXT;
+			ac.update_dct(name);
+		}
 	}
 	
 	static mouse_leave(event, name) {		
-
+		if (is_vectoring) {
+			ac.update_dct(null);
+		}
 	}
 	
 	static mouse_move(event, name) {		
@@ -127,7 +125,7 @@ class Aircraft {
 		this.in_conflict = false;
 		this.conflict_markers = {};
 		this.cpa_connectors = {};
-		this.resolution = { "turn_angle" : 0, "dct" : null };
+		this.reset_resolution();
 		/** Event */
 		this.symbol.onMouseDown = function(event) {
 			Aircraft.mouse_down(this.name);			
@@ -154,15 +152,19 @@ class Aircraft {
 	 * Resolution update
 	 */
 	reset_resolution() {
-		this.resolution = { "turn_angle" : 0, "dct" : null };		
+		this.resolution = { "turn_angle" : null, "dct" : null, "last_position": null };
 	}
 
 	update_angle(angle) {
 		this.resolution.turn_angle = angle;				
 	}
 
-	update_dct(waypoint_name=null) {
+	update_dct(waypoint_name) {
 		this.resolution.dct = waypoint_name;		
+	}
+
+	update_position(x,y) {
+		this.resolution.last_position = [x,y];
 	}
 
 
@@ -245,6 +247,7 @@ class Aircraft {
 		turn_angle = turn_angle <= 180 ? turn_angle : turn_angle - 360;		
 		if ( -90 < turn_angle & turn_angle < 90 ) {
 			ac.update_angle(turn_angle);
+			ac.update_position(event.point.x, event.point.y);
 			is_vectoring = true;
 			let normal = ac.vectoring.getNormalAt(ac.vectoring.length/2).multiply(30);
 			let prefix = turn_angle < 0 ? 'L' : 'R';	
@@ -289,7 +292,8 @@ class Scenario {
 		this.read_waypoint(data.waypoints);
 		this.read_airway(data.airways);
 		this.read_aircraft(data.aircrafts);
-		this.detect_conflict(false);
+		this.load_resolution_history();
+		this.detect_conflict(true);
 	}
 
 	read_waypoint(data) {
@@ -324,6 +328,20 @@ class Scenario {
 				data[name].dir_y
 			);
 		}	
+	}
+
+	load_resolution_history() {
+		let resolution = resolutions[index]; // the resolution to be reloaded
+		// console.log(index, resolution);
+		let names = Object.keys(resolution);
+		for (let i=0; i<names.length; i++) {
+			let name = names[i];
+			if ( resolution[name].last_position != null ) {
+				this.aircrafts[name].resolution = resolution[name]; // write history back to the aircraft resolution 
+				this.aircrafts[name].vectoring.lastSegment.point = resolution[name].last_position; // load last position of vectoring
+				this.aircrafts[name].vectoring.visible = true; // show vectoring
+			}
+		}
 	}
 
 

@@ -28,7 +28,7 @@ foreach ($exercises as $ex) {
     <div class="container-fluid">         
     
         <div class="row">
-            <div class="col-4">
+            <div class="col-5">
                 <span>Name:</span>
                 <input type="text" id="user" name="user" size="12"></input>
                 <span>Exercise:</span>
@@ -39,7 +39,7 @@ foreach ($exercises as $ex) {
                     <?php endforeach; ?>
                 </select>
             </div>            
-            <div class="col-5">
+            <div class="col-4">
                 <span>Scenario index: <span id="current-index"></span></span>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <span>Status: <span id="status"></span></span>

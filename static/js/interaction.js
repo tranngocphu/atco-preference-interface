@@ -7,31 +7,28 @@ function navigate(next) {
         alert("Please enter Your Name to continue.");
         return
     }
-
     if ( !$('#exercise').val() ) { 
         alert("You must choose an exercise to continue.");
         return
     }
-
     save_resolution();
-
     if (next) {
         if (index<n-1) {
-            index += 1;
-            remove_all();
-            scenario = new Scenario(data[index]);       
+            index += 1;            
         } else {
             alert("Data saved! Also end of exercise reached. Thank you!");
+            return
         }        
     } else {
         if (index>0) {
             index -= 1;
-            remove_all();
-            scenario = new Scenario(data[index]);
         } else {
             alert("Data saved! And you're at the first scenario of this exercise."); 
+            return
         } 
     }
+    remove_all();
+    scenario = new Scenario(data[index]);
     $('#current-index').html(`${index+1}/${n}`);
 }
 
@@ -50,12 +47,22 @@ function remove_all() {
 }
 
 
-
 /**
- * Function to show data 
+ * Function to init global resolutions var upon loading data
+ * @param {*} data 
+ * @param {*} n 
  */
-function show_data(data) {
-    $('#data').html(JSON.stringify(data));
+function init_global_resolutions(data, n) {    
+    resolutions = Array(n);
+    for (let i=0; i<n; i++) {
+        resolution = {};
+        let names = Object.keys(data[i].aircrafts);
+        for (let j=0; j<names.length; j++) {
+            let name = names[j];
+            resolution[name] = { "turn_angle" : null, "dct" : null, "last_position": null };
+        }
+        resolutions[i] = resolution;
+    }
 }
 
 
@@ -77,6 +84,7 @@ function request_exercise(name) {
                 $('#status').html(`${$('#exercise').val()} loaded.`);
                 data = JSON.parse(response.data);
                 n = data.length;
+                init_global_resolutions(data, n);
                 $('#current-index').html(`/${n}`);
                 $('#next-btn').prop('disabled', false);
                 $('#back-btn').prop('disabled', false);
@@ -97,7 +105,10 @@ function save_resolution() {
     let names = Object.keys(scenario.aircrafts);
     for (let i=0; i<names.length; i++) {
         let name = names[i];
+        // save resolution into original data var
         data[index].aircrafts[name]['resolution'] = scenario.aircrafts[name].resolution;
+        // save resolution to global resolutions var
+        resolutions[index][name] = scenario.aircrafts[name].resolution;
     }
     let save_data = {
         "action" : "save",
@@ -105,78 +116,20 @@ function save_resolution() {
         "exercise" : $('#exercise').val(),
         "name" : $('#user').val(),
         "scenario_data" : JSON.stringify(data[index]),
-        "resolution_data" : JSON.stringify(data[index].aircrafts)
+        // "resolution_data" : JSON.stringify(data[index].aircrafts),
+        "resolution_data" : JSON.stringify(resolutions[index]),
     };
     $.post('/handlers/save.php', save_data)
         .done(function(response) {
             response = JSON.parse(response);
             if (response.status) {
                 save_count += 1;
-                $('#status').html(`Number of records saved: ${save_count}.`);
+                $('#status').html(`Records saved: ${save_count}.`);
             } else {
                 alert("Data couldn't be saved properly. Please contact us!");
             }
         })
 }
-
-
-
-/**
- * 
- * @param {*} n 
- */
-function generate_data(n) {
-    
-    let wp_names = ['wp1', 'wp2', 'wp3', 'wp4', 'wp5', 'wp6', 'wp7', 'wp8', 'wp9', 'wp10'];
-    let aw_names = ['aw1', 'aw2', 'aw3', 'aw4', 'aw5', 'aw6', 'aw7', 'aw8', 'aw9', 'aw10'];
-    let ac_names = ['ac1', 'ac2', 'ac3', 'ac4', 'ac5', 'ac6', 'ac7', 'ac8', 'ac9', 'ac10'];        
-    
-    let scenarios = [];    
-    
-    for (k=0; k<n; k++) {
-        // Scenarios loop (10 scenarios)
-        let scenario = { waypoints : {}, airways : {}, aircrafts : {} };
-    
-        for (i=0; i<wp_names.length; i++ ) {
-            let name = wp_names[i];    
-            scenario.waypoints[name] = {
-                x : Math.random() * PY2JS_SCALE,
-                y : Math.random() * PY2JS_SCALE,
-            }    
-        }
-        
-        for (i=0; i<aw_names.length; i++) {
-            let name = aw_names[i];        
-            let m = Math.floor(Math.random() * Math.floor(wp_names.length));
-            let n = Math.floor(Math.random() * Math.floor(wp_names.length));            
-            scenario.airways[name] = {
-                start : wp_names[m],
-                end: wp_names[n]
-            }
-        }
-        
-        for (i=0; i<ac_names.length; i++) {
-            let name = ac_names[i];
-            let x = Math.random() * PY2JS_SCALE;
-            let y = Math.random() * PY2JS_SCALE;
-            let sign_x = Math.random() < 0.5 ? -1 : 1;
-            let sign_y = Math.random() < 0.5 ? -1 : 1;
-            let dir_x = sign_x * Math.random() * PY2JS_SCALE;
-            let dir_y = sign_y * Math.random() * PY2JS_SCALE;
-            dir_x = dir_x / (Math.sqrt(dir_x**2 + dir_y**2));
-            dir_y = dir_y / (Math.sqrt(dir_x**2 + dir_y**2));
-            scenario.aircrafts[name] = {
-                x : x,
-                y : y,
-                dir_x : dir_x,
-                dir_y : dir_y
-            }
-        }       
-        scenarios.push(scenario);
-    }
-    return scenarios
-}
-
 
 
 $('#waypoint-cb').on('change', function(){
