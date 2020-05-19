@@ -81,7 +81,7 @@ class Aircraft:
         self.end = np.array([self.end_wp_x, self.end_wp_y])
         self.segment = np.linalg.norm(self.start - self.end)
         self.dir_x = (self.end[0] - self.start[0]) / self.segment
-        self.dir_y = (self.end[1] - self.start[1]) / self.segment
+        self.dir_y = (self.end - self.start[1]) / self.segment
     
 import matplotlib.pyplot as plt
 class Scenario:
