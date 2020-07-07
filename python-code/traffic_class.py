@@ -1,12 +1,33 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pygeodesy.ellipsoidalKarney import LatLon
+from pygeodesy.ellipsoidalKarney import Cartesian
 
-class WayPoint:
-    def __init__(self,name, point):
+
+
+class Point:
+    def __init__(self, lat, lon, x, y):
+        """ Construction of a point in the airspace\\
+            Arguments:
+                lat: latitude 
+                lon: longitude
+                x: normalized longitude to [0,1] range
+                y: normalized latitude  to [0,1] range
+        """
+        self.lat = lat
+        self.lon = lon
+        self.x = x
+        self.y = y
+
+
+class Waypoint:
+    def __init__(self, name, point):
         """The waypoint object has a name, x co-rord and y co-ord"""
         self.name = name
-        self.x=point[0]
-        self.y=point[1]
+        self.x = point.x
+        self.y = point.y
+        self.lat = point.lat
+        self.lon = point.lon
 
     def __str__(self):
         return 'waypoint class:'+ self.name +'  x co-ord: '+ str(self.x) +'  y co-ord: '+str(self.y)

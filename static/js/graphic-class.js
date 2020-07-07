@@ -42,6 +42,9 @@ class WaypointSymbol extends Raster {
         })
         this.scale(WAYPOINT_SYMBOL_NORMAL);
         this.name = name;
+        this.onClick = (e) => {
+            console.log(this.name)
+        }
     }
 }
 
