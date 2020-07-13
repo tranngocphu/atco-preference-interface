@@ -36,7 +36,9 @@ function navigate(next) {
 /**
  * Function to remove all elements
  */
-function remove_all() {    
+function remove_all() {
+    sector_primary_layer.removeChildren();    
+    sector_secondary_layer.removeChildren();
     airway_layer.removeChildren();     
     waypoint_layer.removeChildren();  
     conflict_layer.removeChildren();  
