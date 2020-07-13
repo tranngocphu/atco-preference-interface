@@ -35,6 +35,9 @@ const WAYPOINT_SYMBOL_LARGE = 0.2;
 const AIRWAY_LINE_WIDTH = 0.5;
 const AIRWAY_LINE_COLOR = '#873f00';
 
+const SECTOR_BOUNDARY_WIDTH = 1;
+const SECTOR_BOUNDARY_COLOR = '#ffbb00';
+
 const AIRCRAFT_SYMBOL_SIZE = 7;
 const AIRCRAFT_SYMBOL_COLOR = '#ffffff';
 const AIRCRAFT_SYMBOL_ALERT_COLOR = '#15ff00';
@@ -90,13 +93,14 @@ view.Size = [PAPER_WIDTH, PAPER_HEIGHT];
 
 // Define all layers
 let background_layer = new Layer();
+let sector_layer     = new Layer();
 let airway_layer     = new Layer();
+let waypoint_layer   = new Layer();
 let graphic_layer    = new Layer();
 let conflict_layer   = new Layer();
 let maneuver_layer   = new Layer();
-let aircraft_layer   = new Layer();
 let text_layer       = new Layer();
-let waypoint_layer   = new Layer();
+let aircraft_layer   = new Layer();
 
 // Add a rectangle as a bg layer
 background_layer.activate();

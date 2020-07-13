@@ -291,6 +291,8 @@ class Scenario {
 		this.waypoints = {};
 		this.airways = {};
 		this.aircrafts = {};
+		this.sectors = {};
+		this.read_sector(data.sectors);
 		this.read_waypoint(data.waypoints);
 		this.read_airway(data.airways);
 		this.read_aircraft(data.aircrafts);
@@ -298,6 +300,13 @@ class Scenario {
 		this.detect_conflict(true);
 	}
 
+	read_sector(data) {
+		Object.keys(data).map(name => {
+			console.log(name, data[name]);
+			this.sectors[name] = new SectorBoundary(name, data[name]);
+		});
+	}
+	
 	read_waypoint(data) {
 		let names = Object.keys(data);
 		for (let i=0; i<names.length; i++) {

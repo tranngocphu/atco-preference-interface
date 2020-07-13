@@ -22,6 +22,27 @@ Point.prototype.coords = function() {
     return [this.x, this.y]
 }
 
+/**
+ *  Define the graphic representation of a sector boundary.
+ *  This extends the Path class of Paperjs. * 
+ */
+class SectorBoundary extends Path {
+    /**
+     * 
+     * @param {*} name 
+     * @param {*} segments 
+     */
+    constructor(name, segments) {
+        sector_layer.activate();        
+        super(segments);
+        this.strokeColor = SECTOR_BOUNDARY_COLOR;
+        this.strokeWidth = SECTOR_BOUNDARY_WIDTH;
+        this.name = name;
+        this.onClick = (e) => {
+            console.log("Sector: ", this.name)
+        }
+    }
+}
 
 
 /**
@@ -43,7 +64,7 @@ class WaypointSymbol extends Raster {
         this.scale(WAYPOINT_SYMBOL_NORMAL);
         this.name = name;
         this.onClick = (e) => {
-            console.log(this.name)
+            console.log("Waypoint: ", this.name)
         }
     }
 }
