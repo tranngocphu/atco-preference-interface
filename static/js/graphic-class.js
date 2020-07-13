@@ -32,10 +32,17 @@ class SectorBoundary extends Path {
      * @param {*} name 
      * @param {*} segments 
      */
-    constructor(name, segments) {
-        sector_layer.activate();        
-        super(segments);
-        this.strokeColor = SECTOR_BOUNDARY_COLOR;
+    constructor(name, segments, type) {
+        let color;
+        if (type === 'primary') {
+            sector_primary_layer.activate();
+            color = SECTOR_BOUNDARY_PRIMARY_COLOR;
+        } else {
+            sector_secondary_layer.activate();
+            color = SECTOR_BOUNDARY_SECONDARY_COLOR;
+        }              
+        super(segments);        
+        this.strokeColor = color;
         this.strokeWidth = SECTOR_BOUNDARY_WIDTH;
         this.name = name;
         this.onClick = (e) => {

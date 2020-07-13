@@ -302,8 +302,8 @@ class Scenario {
 
 	read_sector(data) {
 		Object.keys(data).map(name => {
-			console.log(name, data[name]);
-			this.sectors[name] = new SectorBoundary(name, data[name]);
+			console.log(name, data[name].type, data[name].boundary);
+			this.sectors[name] = new SectorBoundary(name, data[name].boundary, data[name].type);
 		});
 	}
 	
