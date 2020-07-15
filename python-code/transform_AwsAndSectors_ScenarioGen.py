@@ -1,3 +1,9 @@
+""" The following code will generate a json file with waypoints, airways and sectors. The inputs to be given are region(lon,lat,...) 
+    and the name of the file based on the region. the files will be saved based on this filename to the 'output path'
+
+"""
+
+
 import pandas as pd
 import numpy as np
 from pathlib import Path
