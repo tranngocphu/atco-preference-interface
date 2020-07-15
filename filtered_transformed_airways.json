@@ -1,0 +1,318 @@
+[{
+    "name": "A464",
+    "segments": [{
+        "name": "ARAMA (50 DME SJ)(Delegated airspace BDRY)",
+        "lat": "1.615",
+        "lon": "103.120",
+        "latdms": "013654N",
+        "londms": "1030712E",
+        "transf_x": 32.926829268293936,
+        "transf_y": 671.0526315789475
+    }, {
+        "name": "35DME",
+        "lat": "1.498",
+        "lon": "103.340",
+        "latdms": "012954N",
+        "londms": "1032024E",
+        "transf_x": 153.6585365853665,
+        "transf_y": 486.31578947368433
+    }, {
+        "name": "LELIB",
+        "lat": "1.458",
+        "lon": "103.414",
+        "latdms": "012729N",
+        "londms": "1032450E",
+        "transf_x": 194.26829268292641,
+        "transf_y": 423.15789473684214
+    }, {
+        "name": "MASNI (FIR BDRY)",
+        "lat": "1.344",
+        "lon": "103.629",
+        "latdms": "012037N",
+        "londms": "1033746E",
+        "transf_x": 312.2560975609771,
+        "transf_y": 243.15789473684228
+    }, {
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E",
+        "transf_x": 436.82926829267876,
+        "transf_y": 50.526315789473735
+    }, {
+        "name": "TANJUNG PINANG VOR/DME (TPG)",
+        "lat": "0.904",
+        "lon": "104.514",
+        "latdms": "005413N",
+        "londms": "1043052E",
+        "transf_x": 797.9268292682892,
+        "transf_y": 451.5789473684209
+    }]
+}, {
+    "name": "A576",
+    "segments": [{
+        "name": "REKOP (50 DME SJ)(delegated airspace BDRY)",
+        "lat": "1.552",
+        "lon": "103.089",
+        "latdms": "013306N",
+        "londms": "1030521E",
+        "transf_x": 15.91463414633947,
+        "transf_y": 571.5789473684212
+    }, {
+        "name": "PIMOK",
+        "lat": "1.447",
+        "lon": "103.336",
+        "latdms": "012648N",
+        "londms": "1032008E",
+        "transf_x": 151.4634146341443,
+        "transf_y": 405.78947368421075
+    }, {
+        "name": "BONSU (FIR BDRY)",
+        "lat": "1.324",
+        "lon": "103.619",
+        "latdms": "011928N",
+        "londms": "1033710E",
+        "transf_x": 306.7682926829255,
+        "transf_y": 211.57894736842124
+    }, {
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E",
+        "transf_x": 436.82926829267876,
+        "transf_y": 50.526315789473735
+    }]
+}, {
+    "name": "G579",
+    "segments": [{
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E",
+        "transf_x": 329.81707317073125,
+        "transf_y": 748.421052631579
+    }, {
+        "name": "JAYBEE NDB (JB)",
+        "lat": "1.500",
+        "lon": "103.712",
+        "latdms": "012959.77N",
+        "londms": "1034241.82E",
+        "transf_x": 357.8048780487811,
+        "transf_y": 489.4736842105264
+    }, {
+        "name": "LAPOL",
+        "lat": "1.439",
+        "lon": "103.743",
+        "latdms": "012622N",
+        "londms": "1034435E",
+        "transf_x": 374.8170731707278,
+        "transf_y": 393.1578947368423
+    }, {
+        "name": "LEGOL",
+        "lat": "1.348",
+        "lon": "103.790",
+        "latdms": "012053N",
+        "londms": "1034723E",
+        "transf_x": 400.6097560975632,
+        "transf_y": 249.4736842105265
+    }, {
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E",
+        "transf_x": 436.82926829267876,
+        "transf_y": 50.526315789473735
+    }, {
+        "name": "REMES",
+        "lat": "0.728",
+        "lon": "103.960",
+        "latdms": "004342N",
+        "londms": "1035735E",
+        "transf_x": 493.9024390243857,
+        "transf_y": 729.4736842105264
+    }, {
+        "name": "REPOV",
+        "lat": "0.273",
+        "lon": "104.050",
+        "latdms": "001623N",
+        "londms": "1040300E",
+        "transf_x": 543.2926829268265,
+        "transf_y": 1447.8947368421052
+    }, {
+        "name": "FIRJ3 (WSJC/WIIZ FIR BDRY)",
+        "lat": "-0.268",
+        "lon": "104.155",
+        "latdms": "001606S",
+        "londms": "1040918E",
+        "transf_x": 600.914634146341,
+        "transf_y": 2302.105263157895
+    }, {
+        "name": "PARDI (ABM NE)",
+        "lat": "-0.567",
+        "lon": "104.217",
+        "latdms": "003400S",
+        "londms": "1041300E",
+        "transf_x": 634.939024390242,
+        "transf_y": 2774.2105263157896
+    }]
+}, {
+    "name": "G580",
+    "segments": [{
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E",
+        "transf_x": 436.82926829267876,
+        "transf_y": 50.526315789473735
+    }, {
+        "name": "HOSBA (R079/34 DME SJ)(R103/24 DME VTK)",
+        "lat": "1.330",
+        "lon": "104.405",
+        "latdms": "011948N",
+        "londms": "1042418E",
+        "transf_x": 738.1097560975604,
+        "transf_y": 221.05263157894757
+    }, {
+        "name": "TOMAN",
+        "lat": "1.363",
+        "lon": "105.788",
+        "latdms": "012147N",
+        "londms": "1054717E",
+        "transf_x": 1497.0731707317045,
+        "transf_y": 273.15789473684225
+    }, {
+        "name": "OBGET",
+        "lat": "1.385",
+        "lon": "106.759",
+        "latdms": "012307N",
+        "londms": "1064531E",
+        "transf_x": 2029.9390243902428,
+        "transf_y": 307.8947368421054
+    }, {
+        "name": "NIMIX",
+        "lat": "1.414",
+        "lon": "107.991",
+        "latdms": "012452N",
+        "londms": "1075926E",
+        "transf_x": 2706.0365853658527,
+        "transf_y": 353.6842105263158
+    }, {
+        "name": "ATETI (FIR BDRY)",
+        "lat": "1.428",
+        "lon": "108.500",
+        "latdms": "012540N",
+        "londms": "1083000E",
+        "transf_x": 2985.365853658536,
+        "transf_y": 375.7894736842105
+    }]
+}, {
+    "name": "W401",
+    "segments": [{
+        "name": "HOSBA (R079/34 DME SJ)(R103/24 DME VTK)",
+        "lat": "1.330",
+        "lon": "104.405",
+        "latdms": "011948N",
+        "londms": "1042418E",
+        "transf_x": 738.1097560975604,
+        "transf_y": 221.05263157894757
+    }, {
+        "name": "KONG KONG NDB (KK)",
+        "lat": "1.522",
+        "lon": "103.990",
+        "latdms": "013117.76N",
+        "londms": "1035923.69E",
+        "transf_x": 510.36585365853256,
+        "transf_y": 524.2105263157896
+    }, {
+        "name": "ALFA",
+        "lat": "1.509",
+        "lon": "103.828",
+        "latdms": "013033N",
+        "londms": "1034942E",
+        "transf_x": 421.4634146341468,
+        "transf_y": 503.6842105263157
+    }, {
+        "name": "JAYBEE NDB (JB)",
+        "lat": "1.500",
+        "lon": "103.712",
+        "latdms": "012959.77N",
+        "londms": "1034241.82E",
+        "transf_x": 357.8048780487811,
+        "transf_y": 489.4736842105264
+    }, {
+        "name": "LELIB",
+        "lat": "1.458",
+        "lon": "103.414",
+        "latdms": "012729N",
+        "londms": "1032450E",
+        "transf_x": 194.26829268292641,
+        "transf_y": 423.15789473684214
+    }, {
+        "name": "PIMOK",
+        "lat": "1.447",
+        "lon": "103.336",
+        "latdms": "012648N",
+        "londms": "1032008E",
+        "transf_x": 151.4634146341443,
+        "transf_y": 405.78947368421075
+    }]
+}, {
+    "name": "W651",
+    "segments": [{
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E",
+        "transf_x": 329.81707317073125,
+        "transf_y": 748.421052631579
+    }, {
+        "name": "KONG KONG NDB (KK)",
+        "lat": "1.522",
+        "lon": "103.990",
+        "latdms": "013117.76N",
+        "londms": "1035923.69E",
+        "transf_x": 510.36585365853256,
+        "transf_y": 524.2105263157896
+    }]
+}, {
+    "name": "P501",
+    "segments": [{
+        "name": "ARAMA (50DME SJ)(delegated airspace BDRY)",
+        "lat": "1.615",
+        "lon": "103.120",
+        "latdms": "013654N",
+        "londms": "1030712E",
+        "transf_x": 32.926829268293936,
+        "transf_y": 671.0526315789475
+    }, {
+        "name": "ANBUS (WMFC/WSJC FIR BDRY)",
+        "lat": "1.266",
+        "lon": "103.351",
+        "latdms": "011556N",
+        "londms": "1032102E",
+        "transf_x": 159.6951219512178,
+        "transf_y": 120.00000000000011
+    }, {
+        "name": "BOBAG (R243/24 DME SJ)",
+        "lat": "1.042",
+        "lon": "103.498",
+        "latdms": "010230N",
+        "londms": "1032954E",
+        "transf_x": 240.36585365853793,
+        "transf_y": 233.68421052631567
+    }, {
+        "name": "ANITO",
+        "lat": "-0.283",
+        "lon": "104.867",
+        "latdms": "001700S",
+        "londms": "1045200E",
+        "transf_x": 991.646341463416,
+        "transf_y": 2325.7894736842104
+    }]
+}]

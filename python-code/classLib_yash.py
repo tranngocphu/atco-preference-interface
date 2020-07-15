@@ -65,9 +65,10 @@ class Airways:
       
     
 
+
 class Aircraft:
-    def __init__(self, name, route):
-        """here route is the airway object"""
+   def __init__(self, name, route,d):
+        """here route is the airway object and d is a random offset number"""
         self.name = name
         self.route = route.name
         self.start_wp = route.start_wp
@@ -77,11 +78,15 @@ class Aircraft:
         self.end_wp_x = route.end_wp_x
         self.end_wp_y = route.end_wp_y
         self.location = route.location
+
         self.start = np.array([self.start_wp_x,self.start_wp_y])
         self.end = np.array([self.end_wp_x, self.end_wp_y])
         self.segment = np.linalg.norm(self.start - self.end)
         self.dir_x = (self.end[0] - self.start[0]) / self.segment
-        self.dir_y = (self.end - self.start[1]) / self.segment
+        self.dir_y = (self.end[1] - self.start[1]) / self.segment
+        self.offset_x= self.start_wp_x + d*self.dir_x
+        self.offset_y= self.start_wp_y +d*self.dir_y
+          
     
 import matplotlib.pyplot as plt
 class Scenario:

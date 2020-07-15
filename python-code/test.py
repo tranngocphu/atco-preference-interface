@@ -25,7 +25,8 @@ wpList = allWaypoint[:15] #need 15 waypoints
 
 wpList=np.round(wpList,4)
 print(wpList, len(wpList))
-#####################################   waypoints   ###########################################
+
+#   waypoints  #
 wpN = ['wpA','wpB','wpC','wpD','wpE','wpF','wpG','wpH','wpI', 'wpJ','wpK','wpL','wpM', 'wpN','wpO','wpP']
 wpNameList=wpN[:len(wpList)]
 #print(wpNames)
@@ -37,15 +38,15 @@ print(waypointList[0].name)
 
 
 
-  #list containing airways class elements
-##################################    AIRWAYS  #####################################################
+#list containing airways class elements
+# AIRWAYS  #
 
 airwayList=[]
 for i in range(8): #no of airways chosen 8 at random
     points = random.sample(waypointList,2)
     airwayList.append(Airways( points[0].name +' - '+ points[1].name, points[0], points[1]))
         
-################################# AIRCRAFT ######################################
+# AIRCRAFT #
 
 ac_per_scenario = 8  # just a random number to have no of aircraft in one scenario
 aircraftList=[]

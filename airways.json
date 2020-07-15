@@ -1,0 +1,1729 @@
+[{
+    "name": "A224",
+    "segments": [{
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E"
+    }, {
+        "name": "MERSING DVOR/DME (VMR) (58 DME PU)",
+        "lat": "2.388",
+        "lon": "103.872",
+        "latdms": "022318N",
+        "londms": "1035218E"
+    }]
+}, {
+    "name": "A457",
+    "segments": [{
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E"
+    }, {
+        "name": "SABKA",
+        "lat": "1.848",
+        "lon": "103.287",
+        "latdms": "015051N",
+        "londms": "1031713E"
+    }, {
+        "name": "MASBO",
+        "lat": "2.047",
+        "lon": "102.881",
+        "latdms": "020248N",
+        "londms": "1025251E"
+    }]
+}, {
+    "name": "A464",
+    "segments": [{
+        "name": "ARAMA (50 DME SJ)(Delegated airspace BDRY)",
+        "lat": "1.615",
+        "lon": "103.120",
+        "latdms": "013654N",
+        "londms": "1030712E"
+    }, {
+        "name": "35DME",
+        "lat": "1.498",
+        "lon": "103.340",
+        "latdms": "012954N",
+        "londms": "1032024E"
+    }, {
+        "name": "LELIB",
+        "lat": "1.458",
+        "lon": "103.414",
+        "latdms": "012729N",
+        "londms": "1032450E"
+    }, {
+        "name": "MASNI (FIR BDRY)",
+        "lat": "1.344",
+        "lon": "103.629",
+        "latdms": "012037N",
+        "londms": "1033746E"
+    }, {
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E"
+    }, {
+        "name": "TANJUNG PINANG VOR/DME (TPG)",
+        "lat": "0.904",
+        "lon": "104.514",
+        "latdms": "005413N",
+        "londms": "1043052E"
+    }]
+}, {
+    "name": "A576",
+    "segments": [{
+        "name": "REKOP (50 DME SJ)(delegated airspace BDRY)",
+        "lat": "1.552",
+        "lon": "103.089",
+        "latdms": "013306N",
+        "londms": "1030521E"
+    }, {
+        "name": "PIMOK",
+        "lat": "1.447",
+        "lon": "103.336",
+        "latdms": "012648N",
+        "londms": "1032008E"
+    }, {
+        "name": "BONSU (FIR BDRY)",
+        "lat": "1.324",
+        "lon": "103.619",
+        "latdms": "011928N",
+        "londms": "1033710E"
+    }, {
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E"
+    }]
+}, {
+    "name": "B338",
+    "segments": [{
+        "name": "MERSING DVOR/DME (VMR)",
+        "lat": "2.388",
+        "lon": "103.872",
+        "latdms": "022318N",
+        "londms": "1035218E"
+    }, {
+        "name": "20DME (20 DME PU)",
+        "lat": "1.758",
+        "lon": "103.970",
+        "latdms": "014530N",
+        "londms": "1035812E"
+    }, {
+        "name": "TEKONG DVOR/DME (VTK)",
+        "lat": "1.415",
+        "lon": "104.022",
+        "latdms": "012455N",
+        "londms": "1040120E"
+    }, {
+        "name": "IDMAS (40 DME VTK)",
+        "lat": "0.817",
+        "lon": "104.313",
+        "latdms": "004900N",
+        "londms": "1041848E"
+    }, {
+        "name": "FIRJ4 (WSJC/WIIZ FIR BDRY)",
+        "lat": "-0.023",
+        "lon": "104.735",
+        "latdms": "000124S",
+        "londms": "1044405E"
+    }, {
+        "name": "ANITO",
+        "lat": "-0.283",
+        "lon": "104.867",
+        "latdms": "001700S",
+        "londms": "1045200E"
+    }]
+}, {
+    "name": "B466",
+    "segments": [{
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E"
+    }, {
+        "name": "MESOG",
+        "lat": "2.018",
+        "lon": "103.211",
+        "latdms": "020103N",
+        "londms": "1031240E"
+    }]
+}, {
+    "name": "B469",
+    "segments": [{
+        "name": "PEKAN DVOR/DME (VPK)",
+        "lat": "3.383",
+        "lon": "103.423",
+        "latdms": "032259N",
+        "londms": "1032524E"
+    }, {
+        "name": "PADLI",
+        "lat": "3.155",
+        "lon": "103.526",
+        "latdms": "030918N",
+        "londms": "1033133E"
+    }, {
+        "name": "90DME (90 DME PU)",
+        "lat": "2.895",
+        "lon": "103.643",
+        "latdms": "025341N",
+        "londms": "1033836E"
+    }, {
+        "name": "BIKTA",
+        "lat": "2.727",
+        "lon": "103.719",
+        "latdms": "024337N",
+        "londms": "1034308E"
+    }, {
+        "name": "MERSING DVOR/DME (VMR) (58 DME PU)",
+        "lat": "2.388",
+        "lon": "103.872",
+        "latdms": "022318N",
+        "londms": "1035218E"
+    }, {
+        "name": "30DME (30 DME PU)",
+        "lat": "1.922",
+        "lon": "103.901",
+        "latdms": "015520N",
+        "londms": "1035405E"
+    }, {
+        "name": "AKOMA (20 DME PU)",
+        "lat": "1.756",
+        "lon": "103.912",
+        "latdms": "014522N",
+        "londms": "1035443E"
+    }, {
+        "name": "10DME (10 DME PU)",
+        "lat": "1.590",
+        "lon": "103.923",
+        "latdms": "013523N",
+        "londms": "1035522E"
+    }, {
+        "name": "PAPA UNIFORM DVOR/DME (PU)",
+        "lat": "1.423",
+        "lon": "103.933",
+        "latdms": "012523.99N",
+        "londms": "1035559.74E"
+    }, {
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E"
+    }, {
+        "name": "BAVAL (30 DME SJ)",
+        "lat": "0.755",
+        "lon": "104.045",
+        "latdms": "004518N",
+        "londms": "1040242E"
+    }, {
+        "name": "FIRJ1 (WSJC/WIIZ FIR BDRY)",
+        "lat": "-0.208",
+        "lon": "104.407",
+        "latdms": "001230S",
+        "londms": "1042424E"
+    }, {
+        "name": "SINGKEP NDB (NE)",
+        "lat": "-0.483",
+        "lon": "104.576",
+        "latdms": "002858.79S",
+        "londms": "1043433.57E"
+    }]
+}, {
+    "name": "B470",
+    "segments": [{
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E"
+    }, {
+        "name": "UDONI (30 DME SJ)",
+        "lat": "0.805",
+        "lon": "104.135",
+        "latdms": "004818N",
+        "londms": "1040806E"
+    }, {
+        "name": "FIRJ2 (WSJC/WIIZ FIR BDRY)",
+        "lat": "-0.040",
+        "lon": "104.701",
+        "latdms": "000224S",
+        "londms": "1044205E"
+    }, {
+        "name": "ANITO",
+        "lat": "-0.283",
+        "lon": "104.867",
+        "latdms": "001700S",
+        "londms": "1045200E"
+    }]
+}, {
+    "name": "G219",
+    "segments": [{
+        "name": "NIVAM",
+        "lat": "2.614",
+        "lon": "104.041",
+        "latdms": "023650N",
+        "londms": "1040228E"
+    }, {
+        "name": "30VTK (30 DME VTK)",
+        "lat": "1.915",
+        "lon": "104.033",
+        "latdms": "015454N",
+        "londms": "1040159E"
+    }, {
+        "name": "TEKONG DVOR/DME (VTK)",
+        "lat": "1.415",
+        "lon": "104.022",
+        "latdms": "012455N",
+        "londms": "1040120E"
+    }]
+}, {
+    "name": "G334",
+    "segments": [{
+        "name": "PULAU TIOMAN VOR/DME (VPT)",
+        "lat": "2.916",
+        "lon": "104.111",
+        "latdms": "025459N",
+        "londms": "1040639E"
+    }, {
+        "name": "KIBOL (WMFC/WSJC FIR BDRY)",
+        "lat": "2.875",
+        "lon": "104.468",
+        "latdms": "025229N",
+        "londms": "1042805E"
+    }, {
+        "name": "BUNTO",
+        "lat": "2.669",
+        "lon": "105.998",
+        "latdms": "024008N",
+        "londms": "1055953E"
+    }, {
+        "name": "KAMIN (WSJC/WBFC FIR BDRY)",
+        "lat": "2.578",
+        "lon": "108.927",
+        "latdms": "023442N",
+        "londms": "1085536E"
+    }]
+}, {
+    "name": "G579",
+    "segments": [{
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E"
+    }, {
+        "name": "JAYBEE NDB (JB)",
+        "lat": "1.500",
+        "lon": "103.712",
+        "latdms": "012959.77N",
+        "londms": "1034241.82E"
+    }, {
+        "name": "LAPOL",
+        "lat": "1.439",
+        "lon": "103.743",
+        "latdms": "012622N",
+        "londms": "1034435E"
+    }, {
+        "name": "LEGOL",
+        "lat": "1.348",
+        "lon": "103.790",
+        "latdms": "012053N",
+        "londms": "1034723E"
+    }, {
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E"
+    }, {
+        "name": "REMES",
+        "lat": "0.728",
+        "lon": "103.960",
+        "latdms": "004342N",
+        "londms": "1035735E"
+    }, {
+        "name": "REPOV",
+        "lat": "0.273",
+        "lon": "104.050",
+        "latdms": "001623N",
+        "londms": "1040300E"
+    }, {
+        "name": "FIRJ3 (WSJC/WIIZ FIR BDRY)",
+        "lat": "-0.268",
+        "lon": "104.155",
+        "latdms": "001606S",
+        "londms": "1040918E"
+    }, {
+        "name": "PARDI (ABM NE)",
+        "lat": "-0.567",
+        "lon": "104.217",
+        "latdms": "003400S",
+        "londms": "1041300E"
+    }]
+}, {
+    "name": "G580",
+    "segments": [{
+        "name": "SINJON DVOR/DME (SJ)",
+        "lat": "1.222",
+        "lon": "103.856",
+        "latdms": "011319N",
+        "londms": "1035120E"
+    }, {
+        "name": "HOSBA (R079/34 DME SJ)(R103/24 DME VTK)",
+        "lat": "1.330",
+        "lon": "104.405",
+        "latdms": "011948N",
+        "londms": "1042418E"
+    }, {
+        "name": "TOMAN",
+        "lat": "1.363",
+        "lon": "105.788",
+        "latdms": "012147N",
+        "londms": "1054717E"
+    }, {
+        "name": "OBGET",
+        "lat": "1.385",
+        "lon": "106.759",
+        "latdms": "012307N",
+        "londms": "1064531E"
+    }, {
+        "name": "NIMIX",
+        "lat": "1.414",
+        "lon": "107.991",
+        "latdms": "012452N",
+        "londms": "1075926E"
+    }, {
+        "name": "ATETI (FIR BDRY)",
+        "lat": "1.428",
+        "lon": "108.500",
+        "latdms": "012540N",
+        "londms": "1083000E"
+    }]
+}, {
+    "name": "R208",
+    "segments": [{
+        "name": "IGARI",
+        "lat": "6.937",
+        "lon": "103.585",
+        "latdms": "065612N",
+        "londms": "1033506E"
+    }, {
+        "name": "IKUKO (FIR BDRY)",
+        "lat": "5.753",
+        "lon": "103.223",
+        "latdms": "054512N",
+        "londms": "1031324E"
+    }]
+}, {
+    "name": "R325",
+    "segments": [{
+        "name": "REDUK",
+        "lat": "2.332",
+        "lon": "103.083",
+        "latdms": "021957N",
+        "londms": "1030459E"
+    }, {
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E"
+    }]
+}, {
+    "name": "R469",
+    "segments": [{
+        "name": "TAROS (FIR BDRY)",
+        "lat": "0.700",
+        "lon": "102.269",
+        "latdms": "004200N",
+        "londms": "1021607E"
+    }, {
+        "name": "ASUNA (R252/44 DME SJ)",
+        "lat": "0.997",
+        "lon": "103.165",
+        "latdms": "005948N",
+        "londms": "1030954E"
+    }, {
+        "name": "BOBAG (R243/24 DME SJ)",
+        "lat": "1.042",
+        "lon": "103.498",
+        "latdms": "010230N",
+        "londms": "1032954E"
+    }, {
+        "name": "SAMKO (R168/8 DME SJ)",
+        "lat": "1.092",
+        "lon": "103.882",
+        "latdms": "010529.5N",
+        "londms": "1035254.9E"
+    }]
+}, {
+    "name": "W401",
+    "segments": [{
+        "name": "HOSBA (R079/34 DME SJ)(R103/24 DME VTK)",
+        "lat": "1.330",
+        "lon": "104.405",
+        "latdms": "011948N",
+        "londms": "1042418E"
+    }, {
+        "name": "KONG KONG NDB (KK)",
+        "lat": "1.522",
+        "lon": "103.990",
+        "latdms": "013117.76N",
+        "londms": "1035923.69E"
+    }, {
+        "name": "ALFA",
+        "lat": "1.509",
+        "lon": "103.828",
+        "latdms": "013033N",
+        "londms": "1034942E"
+    }, {
+        "name": "JAYBEE NDB (JB)",
+        "lat": "1.500",
+        "lon": "103.712",
+        "latdms": "012959.77N",
+        "londms": "1034241.82E"
+    }, {
+        "name": "LELIB",
+        "lat": "1.458",
+        "lon": "103.414",
+        "latdms": "012729N",
+        "londms": "1032450E"
+    }, {
+        "name": "PIMOK",
+        "lat": "1.447",
+        "lon": "103.336",
+        "latdms": "012648N",
+        "londms": "1032008E"
+    }]
+}, {
+    "name": "W407",
+    "segments": [{
+        "name": "TEKONG DVOR/DME (VTK)",
+        "lat": "1.415",
+        "lon": "104.022",
+        "latdms": "012455N",
+        "londms": "1040120E"
+    }, {
+        "name": "SAMKO (8 DME SJ)",
+        "lat": "1.092",
+        "lon": "103.882",
+        "latdms": "010529.5N",
+        "londms": "1035254.9E"
+    }]
+}, {
+    "name": "W534",
+    "segments": [{
+        "name": "TOPOR",
+        "lat": "1.737",
+        "lon": "102.892",
+        "latdms": "014412N",
+        "londms": "1025330E"
+    }, {
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E"
+    }]
+}, {
+    "name": "W651",
+    "segments": [{
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E"
+    }, {
+        "name": "KONG KONG NDB (KK)",
+        "lat": "1.522",
+        "lon": "103.990",
+        "latdms": "013117.76N",
+        "londms": "1035923.69E"
+    }]
+}, {
+    "name": "L504",
+    "segments": [{
+        "name": "OBDOS",
+        "lat": "0.418",
+        "lon": "106.931",
+        "latdms": "002503N",
+        "londms": "1065551E"
+    }, {
+        "name": "BAVUS (WSJC/WIIZ FIR BDRY)",
+        "lat": "0.000",
+        "lon": "109.000",
+        "latdms": "000000N",
+        "londms": "1090000E"
+    }]
+}, {
+    "name": "L517",
+    "segments": [{
+        "name": "TERIX",
+        "lat": "4.256",
+        "lon": "109.582",
+        "latdms": "041521N",
+        "londms": "1093456E"
+    }, {
+        "name": "GULIB (WSJC/WBFC FIR BDRY)",
+        "lat": "4.287",
+        "lon": "111.109",
+        "latdms": "041714N",
+        "londms": "1110633E"
+    }]
+}, {
+    "name": "L625",
+    "segments": [{
+        "name": "AKMON",
+        "lat": "8.215",
+        "lon": "110.218",
+        "latdms": "081254N",
+        "londms": "1101306E"
+    }, {
+        "name": "LUSMO",
+        "lat": "3.561",
+        "lon": "106.926",
+        "latdms": "033341N",
+        "londms": "1065534E"
+    }, {
+        "name": "VERIN",
+        "lat": "2.559",
+        "lon": "106.407",
+        "latdms": "023332N",
+        "londms": "1062425E"
+    }, {
+        "name": "TOMAN",
+        "lat": "1.363",
+        "lon": "105.788",
+        "latdms": "012147N",
+        "londms": "1054717E"
+    }]
+}, {
+    "name": "L629",
+    "segments": [{
+        "name": "DOLOX",
+        "lat": "4.811",
+        "lon": "105.380",
+        "latdms": "044841N",
+        "londms": "1052247E"
+    }, {
+        "name": "NOPAT",
+        "lat": "4.387",
+        "lon": "104.799",
+        "latdms": "042313N",
+        "londms": "1044756E"
+    }, {
+        "name": "VEPLI",
+        "lat": "3.873",
+        "lon": "104.095",
+        "latdms": "035223N",
+        "londms": "1040542E"
+    }, {
+        "name": "BUVAL (WSJC/WMFC FIR BDRY)",
+        "lat": "3.606",
+        "lon": "103.728",
+        "latdms": "033622N",
+        "londms": "1034341E"
+    }, {
+        "name": "PEKAN DVOR/DME (VPK)",
+        "lat": "3.383",
+        "lon": "103.423",
+        "latdms": "032259N",
+        "londms": "1032524E"
+    }]
+}, {
+    "name": "L635",
+    "segments": [{
+        "name": "MABLI",
+        "lat": "4.288",
+        "lon": "106.213",
+        "latdms": "041717N",
+        "londms": "1061247E"
+    }, {
+        "name": "SUSAR",
+        "lat": "3.980",
+        "lon": "105.263",
+        "latdms": "035848N",
+        "londms": "1051547E"
+    }, {
+        "name": "DUBSA",
+        "lat": "3.817",
+        "lon": "104.761",
+        "latdms": "034901N",
+        "londms": "1044540E"
+    }, {
+        "name": "UGPEK",
+        "lat": "3.613",
+        "lon": "104.131",
+        "latdms": "033647N",
+        "londms": "1040752E"
+    }, {
+        "name": "DOVOL (WSJC/WMFC FIR BDRY)",
+        "lat": "3.513",
+        "lon": "103.823",
+        "latdms": "033047N",
+        "londms": "1034923E"
+    }, {
+        "name": "PEKAN DVOR/DME (VPK)",
+        "lat": "3.383",
+        "lon": "103.423",
+        "latdms": "032259N",
+        "londms": "1032524E"
+    }]
+}, {
+    "name": "L642",
+    "segments": [{
+        "name": "ESPOB (VVTS/WSJC FIR BDRY)",
+        "lat": "7.000",
+        "lon": "105.555",
+        "latdms": "070000N",
+        "londms": "1053318E"
+    }, {
+        "name": "ENREP",
+        "lat": "4.873",
+        "lon": "104.245",
+        "latdms": "045223N",
+        "londms": "1041442E"
+    }, {
+        "name": "VEPLI",
+        "lat": "3.873",
+        "lon": "104.095",
+        "latdms": "035223N",
+        "londms": "1040542E"
+    }, {
+        "name": "EGOLO (WSJC/WMFC FIR BDRY)",
+        "lat": "3.326",
+        "lon": "104.013",
+        "latdms": "031934N",
+        "londms": "1040047E"
+    }, {
+        "name": "ROBMO",
+        "lat": "2.911",
+        "lon": "103.950",
+        "latdms": "025440N",
+        "londms": "1035700E"
+    }, {
+        "name": "MERSING DVOR/DME (VMR)",
+        "lat": "2.388",
+        "lon": "103.872",
+        "latdms": "022318N",
+        "londms": "1035218E"
+    }]
+}, {
+    "name": "L644",
+    "segments": [{
+        "name": "DUDIS (WSJC/VVTS FIR BDRY)",
+        "lat": "7.000",
+        "lon": "106.810",
+        "latdms": "070000N",
+        "londms": "1064836E"
+    }, {
+        "name": "MABLI",
+        "lat": "4.288",
+        "lon": "106.213",
+        "latdms": "041717N",
+        "londms": "1061247E"
+    }, {
+        "name": "OPULA",
+        "lat": "3.532",
+        "lon": "106.355",
+        "latdms": "033155N",
+        "londms": "1062118E"
+    }, {
+        "name": "ONAPO",
+        "lat": "3.354",
+        "lon": "106.388",
+        "latdms": "032116N",
+        "londms": "1062318E"
+    }, {
+        "name": "OMLIV",
+        "lat": "2.920",
+        "lon": "106.470",
+        "latdms": "025512N",
+        "londms": "1062812E"
+    }, {
+        "name": "OMBAP",
+        "lat": "2.521",
+        "lon": "106.545",
+        "latdms": "023116N",
+        "londms": "1063242E"
+    }, {
+        "name": "OLSAM",
+        "lat": "2.016",
+        "lon": "106.640",
+        "latdms": "020059N",
+        "londms": "1063824E"
+    }, {
+        "name": "OBLOT",
+        "lat": "1.716",
+        "lon": "106.696",
+        "latdms": "014256N",
+        "londms": "1064147E"
+    }, {
+        "name": "OBGET",
+        "lat": "1.385",
+        "lon": "106.759",
+        "latdms": "012307N",
+        "londms": "1064531E"
+    }, {
+        "name": "KIKOR (WSJC/WIIZ FIR BDRY)",
+        "lat": "-0.379",
+        "lon": "107.090",
+        "latdms": "002244S",
+        "londms": "1070524E"
+    }]
+}, {
+    "name": "L649",
+    "segments": [{
+        "name": "LAXOR (WSJC/RPHI FIR BDRY)",
+        "lat": "9.827",
+        "lon": "114.808",
+        "latdms": "094937N",
+        "londms": "1144829E"
+    }, {
+        "name": "URKET (WSJC/WBFC FIR BDRY)",
+        "lat": "8.192",
+        "lon": "114.833",
+        "latdms": "081130N",
+        "londms": "1145000E"
+    }, {
+        "name": "DAKIX (WBFC/WSJC FIR BDRY)",
+        "lat": "7.148",
+        "lon": "114.848",
+        "latdms": "070854N",
+        "londms": "1145054E"
+    }]
+}, {
+    "name": "L762",
+    "segments": [{
+        "name": "ASUNA",
+        "lat": "0.997",
+        "lon": "103.165",
+        "latdms": "005948N",
+        "londms": "1030954E"
+    }, {
+        "name": "MIBEL (WIIZ/WSJC FIR BDRY)",
+        "lat": "1.397",
+        "lon": "102.138",
+        "latdms": "012351N",
+        "londms": "1020816E"
+    }]
+}, {
+    "name": "M522",
+    "segments": [{
+        "name": "VINIK (WSJC/RPHI FIR BDRY)",
+        "lat": "8.642",
+        "lon": "116.230",
+        "latdms": "083830N",
+        "londms": "1161348E"
+    }, {
+        "name": "NODIN (WSJC/WBFC FIR BDRY)",
+        "lat": "8.183",
+        "lon": "116.195",
+        "latdms": "081100N",
+        "londms": "1161142E"
+    }]
+}, {
+    "name": "M630",
+    "segments": [{
+        "name": "SUKRI",
+        "lat": "1.385",
+        "lon": "102.984",
+        "latdms": "012306N",
+        "londms": "1025904E"
+    }, {
+        "name": "BOBAG",
+        "lat": "1.042",
+        "lon": "103.498",
+        "latdms": "010230N",
+        "londms": "1032954E"
+    }, {
+        "name": "TANJUNG PINANG VOR/DME (TPG)",
+        "lat": "0.904",
+        "lon": "104.514",
+        "latdms": "005413N",
+        "londms": "1043052E"
+    }]
+}, {
+    "name": "M635",
+    "segments": [{
+        "name": "TEKONG DVOR/DME (VTK)",
+        "lat": "1.415",
+        "lon": "104.022",
+        "latdms": "012455N",
+        "londms": "1040120E"
+    }, {
+        "name": "TANJUNG PINANG VOR/DME (TPG)",
+        "lat": "0.904",
+        "lon": "104.514",
+        "latdms": "005413N",
+        "londms": "1043052E"
+    }, {
+        "name": "ATPOM",
+        "lat": "0.407",
+        "lon": "105.354",
+        "latdms": "002425N",
+        "londms": "1052114E"
+    }, {
+        "name": "SURGA (WSJC/WIIZ FIR BDRY)",
+        "lat": "-0.616",
+        "lon": "106.522",
+        "latdms": "003657S",
+        "londms": "1063119E"
+    }]
+}, {
+    "name": "M646",
+    "segments": [{
+        "name": "KAMIN (WBFC/WSJC FIR BDRY)",
+        "lat": "2.578",
+        "lon": "108.927",
+        "latdms": "023442N",
+        "londms": "1085536E"
+    }, {
+        "name": "SABIP",
+        "lat": "2.161",
+        "lon": "107.846",
+        "latdms": "020940N",
+        "londms": "1075044E"
+    }, {
+        "name": "ESPIT",
+        "lat": "2.003",
+        "lon": "107.440",
+        "latdms": "020011N",
+        "londms": "1072624E"
+    }, {
+        "name": "OBLOT",
+        "lat": "1.716",
+        "lon": "106.696",
+        "latdms": "014256N",
+        "londms": "1064147E"
+    }, {
+        "name": "TOMAN",
+        "lat": "1.363",
+        "lon": "105.788",
+        "latdms": "012147N",
+        "londms": "1054717E"
+    }]
+}, {
+    "name": "M753",
+    "segments": [{
+        "name": "IPRIX (VVTS/WSJC FIR BDRY)",
+        "lat": "7.000",
+        "lon": "104.132",
+        "latdms": "070000N",
+        "londms": "1040755E"
+    }, {
+        "name": "ENREP",
+        "lat": "4.873",
+        "lon": "104.245",
+        "latdms": "045223N",
+        "londms": "1041442E"
+    }]
+}, {
+    "name": "M754",
+    "segments": [{
+        "name": "VINIK (WSJC/RPHI FIR BDRY)",
+        "lat": "8.642",
+        "lon": "116.230",
+        "latdms": "083830N",
+        "londms": "1161348E"
+    }, {
+        "name": "SUMLA (WSJC/WMFC FIR BDRY)",
+        "lat": "8.045",
+        "lon": "116.015",
+        "latdms": "080242N",
+        "londms": "1160054E"
+    }]
+}, {
+    "name": "M758",
+    "segments": [{
+        "name": "PEKAN DVOR/DME (VPK)",
+        "lat": "3.383",
+        "lon": "103.423",
+        "latdms": "032259N",
+        "londms": "1032524E"
+    }, {
+        "name": "IDSEL (WMFC/WSJC FIR BDRY)",
+        "lat": "3.409",
+        "lon": "103.929",
+        "latdms": "032432N",
+        "londms": "1035544E"
+    }, {
+        "name": "URIGO",
+        "lat": "3.418",
+        "lon": "104.113",
+        "latdms": "032505N",
+        "londms": "1040647E"
+    }, {
+        "name": "VISAT",
+        "lat": "3.439",
+        "lon": "104.526",
+        "latdms": "032620N",
+        "londms": "1043134E"
+    }, {
+        "name": "MABAL",
+        "lat": "3.474",
+        "lon": "105.210",
+        "latdms": "032826N",
+        "londms": "1051236E"
+    }, {
+        "name": "ELGOR",
+        "lat": "3.504",
+        "lon": "105.805",
+        "latdms": "033014N",
+        "londms": "1054818E"
+    }, {
+        "name": "LUSMO",
+        "lat": "3.561",
+        "lon": "106.926",
+        "latdms": "033341N",
+        "londms": "1065534E"
+    }, {
+        "name": "TERIX",
+        "lat": "4.256",
+        "lon": "109.582",
+        "latdms": "041521N",
+        "londms": "1093456E"
+    }, {
+        "name": "OLKIT (WSJC/WBFC FIR BDRY)",
+        "lat": "4.836",
+        "lon": "111.855",
+        "latdms": "045010N",
+        "londms": "1115118E"
+    }]
+}, {
+    "name": "M761",
+    "segments": [{
+        "name": "PEKAN DVOR/DME (VPK)",
+        "lat": "3.383",
+        "lon": "103.423",
+        "latdms": "032259N",
+        "londms": "1032524E"
+    }, {
+        "name": "KETOD (WMFC/WSJC FIR BDRY)",
+        "lat": "3.178",
+        "lon": "104.162",
+        "latdms": "031042N",
+        "londms": "1040942E"
+    }, {
+        "name": "OTLON",
+        "lat": "3.131",
+        "lon": "104.335",
+        "latdms": "030752N",
+        "londms": "1042006E"
+    }, {
+        "name": "KILOT",
+        "lat": "3.038",
+        "lon": "104.673",
+        "latdms": "030217N",
+        "londms": "1044023E"
+    }, {
+        "name": "LIPRO",
+        "lat": "2.895",
+        "lon": "105.191",
+        "latdms": "025342N",
+        "londms": "1051128E"
+    }, {
+        "name": "BOBOB",
+        "lat": "2.368",
+        "lon": "107.099",
+        "latdms": "022206N",
+        "londms": "1070558E"
+    }, {
+        "name": "SABIP",
+        "lat": "2.161",
+        "lon": "107.846",
+        "latdms": "020940N",
+        "londms": "1075044E"
+    }, {
+        "name": "AGOBA (WSJC/WBFC FIR BDRY)",
+        "lat": "1.978",
+        "lon": "108.500",
+        "latdms": "015840N",
+        "londms": "1083000E"
+    }]
+}, {
+    "name": "M763",
+    "segments": [{
+        "name": "ENREP",
+        "lat": "4.873",
+        "lon": "104.245",
+        "latdms": "045223N",
+        "londms": "1041442E"
+    }, {
+        "name": "TAXUL (WMFC/WSJC FIR BDRY)",
+        "lat": "3.843",
+        "lon": "103.677",
+        "latdms": "035035N",
+        "londms": "1034037E"
+    }, {
+        "name": "PEKAN DVOR/DME (VPK)",
+        "lat": "3.383",
+        "lon": "103.423",
+        "latdms": "032259N",
+        "londms": "1032524E"
+    }]
+}, {
+    "name": "M765",
+    "segments": [{
+        "name": "IGARI",
+        "lat": "6.937",
+        "lon": "103.585",
+        "latdms": "065612N",
+        "londms": "1033506E"
+    }, {
+        "name": "VENLI (WMFC/WSJC FIR BDRY)",
+        "lat": "6.480",
+        "lon": "102.817",
+        "latdms": "062848N",
+        "londms": "1024900E"
+    }]
+}, {
+    "name": "M767",
+    "segments": [{
+        "name": "TEGID (RPHI/WSJC FIR BDRY)",
+        "lat": "8.949",
+        "lon": "115.862",
+        "latdms": "085656N",
+        "londms": "1155143E"
+    }, {
+        "name": "TODAM",
+        "lat": "6.527",
+        "lon": "112.593",
+        "latdms": "063138N",
+        "londms": "1123536E"
+    }, {
+        "name": "TERIX",
+        "lat": "4.256",
+        "lon": "109.582",
+        "latdms": "041521N",
+        "londms": "1093456E"
+    }, {
+        "name": "BOBOB",
+        "lat": "2.368",
+        "lon": "107.099",
+        "latdms": "022206N",
+        "londms": "1070558E"
+    }, {
+        "name": "TOMAN",
+        "lat": "1.363",
+        "lon": "105.788",
+        "latdms": "012147N",
+        "londms": "1054717E"
+    }]
+}, {
+    "name": "M768",
+    "segments": [{
+        "name": "AKMON",
+        "lat": "8.215",
+        "lon": "110.218",
+        "latdms": "081254N",
+        "londms": "1101306E"
+    }, {
+        "name": "LAGOT",
+        "lat": "7.276",
+        "lon": "111.545",
+        "latdms": "071632N",
+        "londms": "1113243E"
+    }, {
+        "name": "TODAM",
+        "lat": "6.527",
+        "lon": "112.593",
+        "latdms": "063138N",
+        "londms": "1123536E"
+    }, {
+        "name": "ASISU (WSJC/WBFC FIR BDRY)",
+        "lat": "5.985",
+        "lon": "113.346",
+        "latdms": "055906N",
+        "londms": "1132046E"
+    }]
+}, {
+    "name": "M771",
+    "segments": [{
+        "name": "DUDIS (WSJC/VVTS FIR BDRY)",
+        "lat": "7.000",
+        "lon": "106.810",
+        "latdms": "070000N",
+        "londms": "1064836E"
+    }, {
+        "name": "DOLOX",
+        "lat": "4.811",
+        "lon": "105.380",
+        "latdms": "044841N",
+        "londms": "1052247E"
+    }, {
+        "name": "DAMOG",
+        "lat": "4.207",
+        "lon": "105.004",
+        "latdms": "041225N",
+        "londms": "1050014E"
+    }, {
+        "name": "DUBSA",
+        "lat": "3.817",
+        "lon": "104.761",
+        "latdms": "034901N",
+        "londms": "1044540E"
+    }, {
+        "name": "VISAT",
+        "lat": "3.439",
+        "lon": "104.526",
+        "latdms": "032620N",
+        "londms": "1043134E"
+    }, {
+        "name": "OTLON",
+        "lat": "3.131",
+        "lon": "104.335",
+        "latdms": "030752N",
+        "londms": "1042006E"
+    }, {
+        "name": "RAXIM (WMFC/WSJC FIR BDRY)",
+        "lat": "3.055",
+        "lon": "104.287",
+        "latdms": "030318N",
+        "londms": "1041713E"
+    }, {
+        "name": "MERSING DVOR/DME (VMR)",
+        "lat": "2.388",
+        "lon": "103.872",
+        "latdms": "022318N",
+        "londms": "1035218E"
+    }]
+}, {
+    "name": "M772",
+    "segments": [{
+        "name": "LAXOR (WSJC/RPHI FIR BDRY)",
+        "lat": "9.827",
+        "lon": "114.808",
+        "latdms": "094937N",
+        "londms": "1144829E"
+    }, {
+        "name": "BIDAG",
+        "lat": "7.517",
+        "lon": "113.929",
+        "latdms": "073101N",
+        "londms": "1135544E"
+    }, {
+        "name": "ASISU (WBFC/WSJC FIR BDRY)",
+        "lat": "5.985",
+        "lon": "113.346",
+        "latdms": "055906N",
+        "londms": "1132046E"
+    }]
+}, {
+    "name": "M774",
+    "segments": [{
+        "name": "TANJUNG PINANG VOR/DME (TPG)",
+        "lat": "0.904",
+        "lon": "104.514",
+        "latdms": "005413N",
+        "londms": "1043052E"
+    }, {
+        "name": "OBDOS",
+        "lat": "0.418",
+        "lon": "106.931",
+        "latdms": "002503N",
+        "londms": "1065551E"
+    }, {
+        "name": "KADAR (WSJC/WIIZ FIR BDRY)",
+        "lat": "-0.113",
+        "lon": "107.728",
+        "latdms": "000647S",
+        "londms": "1074342E"
+    }]
+}, {
+    "name": "M904",
+    "segments": [{
+        "name": "TIDAR (WSJC/VTBB FIR BDRY)",
+        "lat": "6.875",
+        "lon": "102.833",
+        "latdms": "065230.15N",
+        "londms": "1024959.82E"
+    }, {
+        "name": "ODONO",
+        "lat": "6.604",
+        "lon": "103.025",
+        "latdms": "063613.82N",
+        "londms": "1030129.41E"
+    }, {
+        "name": "UPRON",
+        "lat": "6.151",
+        "lon": "103.344",
+        "latdms": "060903.41N",
+        "londms": "1032039.98E"
+    }, {
+        "name": "ENREP",
+        "lat": "4.873",
+        "lon": "104.245",
+        "latdms": "045223N",
+        "londms": "1041442E"
+    }]
+}, {
+    "name": "N502",
+    "segments": [{
+        "name": "BOBAG (R243/24 DME SJ)",
+        "lat": "1.042",
+        "lon": "103.498",
+        "latdms": "010230N",
+        "londms": "1032954E"
+    }, {
+        "name": "PARDI",
+        "lat": "-0.567",
+        "lon": "104.217",
+        "latdms": "003400S",
+        "londms": "1041300E"
+    }]
+}, {
+    "name": "N875",
+    "segments": [{
+        "name": "ENREP",
+        "lat": "4.873",
+        "lon": "104.245",
+        "latdms": "045223N",
+        "londms": "1041442E"
+    }, {
+        "name": "NOPAT",
+        "lat": "4.387",
+        "lon": "104.799",
+        "latdms": "042313N",
+        "londms": "1044756E"
+    }, {
+        "name": "DAMOG",
+        "lat": "4.207",
+        "lon": "105.004",
+        "latdms": "041225N",
+        "londms": "1050014E"
+    }, {
+        "name": "SUSAR",
+        "lat": "3.980",
+        "lon": "105.263",
+        "latdms": "035848N",
+        "londms": "1051547E"
+    }, {
+        "name": "MUMSO",
+        "lat": "3.739",
+        "lon": "105.537",
+        "latdms": "034420N",
+        "londms": "1053213E"
+    }, {
+        "name": "ELGOR",
+        "lat": "3.504",
+        "lon": "105.805",
+        "latdms": "033014N",
+        "londms": "1054818E"
+    }, {
+        "name": "LEBIN",
+        "lat": "3.244",
+        "lon": "106.101",
+        "latdms": "031438N",
+        "londms": "1060604E"
+    }, {
+        "name": "BOBOB",
+        "lat": "2.368",
+        "lon": "107.099",
+        "latdms": "022206N",
+        "londms": "1070558E"
+    }, {
+        "name": "ESPIT",
+        "lat": "2.003",
+        "lon": "107.440",
+        "latdms": "020011N",
+        "londms": "1072624E"
+    }, {
+        "name": "NIMIX",
+        "lat": "1.414",
+        "lon": "107.991",
+        "latdms": "012452N",
+        "londms": "1075926E"
+    }, {
+        "name": "ARUPA",
+        "lat": "0.528",
+        "lon": "108.813",
+        "latdms": "003140N",
+        "londms": "1084846E"
+    }]
+}, {
+    "name": "N884",
+    "segments": [{
+        "name": "LAXOR (WSJC/RPHI FIR BDRY)",
+        "lat": "9.827",
+        "lon": "114.808",
+        "latdms": "094937N",
+        "londms": "1144829E"
+    }, {
+        "name": "LAGOT",
+        "lat": "7.276",
+        "lon": "111.545",
+        "latdms": "071632N",
+        "londms": "1113243E"
+    }, {
+        "name": "LUSMO",
+        "lat": "3.561",
+        "lon": "106.926",
+        "latdms": "033341N",
+        "londms": "1065534E"
+    }, {
+        "name": "LEBIN",
+        "lat": "3.244",
+        "lon": "106.101",
+        "latdms": "031438N",
+        "londms": "1060604E"
+    }, {
+        "name": "LIPRO",
+        "lat": "2.895",
+        "lon": "105.191",
+        "latdms": "025342N",
+        "londms": "1051128E"
+    }, {
+        "name": "LENDA (WSJC/WMFC FIR BDRY)",
+        "lat": "2.690",
+        "lon": "104.659",
+        "latdms": "024124N",
+        "londms": "1043932E"
+    }, {
+        "name": "MERSING DVOR/DME (VMR)",
+        "lat": "2.388",
+        "lon": "103.872",
+        "latdms": "022318N",
+        "londms": "1035218E"
+    }]
+}, {
+    "name": "N891",
+    "segments": [{
+        "name": "IGARI",
+        "lat": "6.937",
+        "lon": "103.585",
+        "latdms": "065612N",
+        "londms": "1033506E"
+    }, {
+        "name": "IKUMI",
+        "lat": "5.894",
+        "lon": "103.919",
+        "latdms": "055338N",
+        "londms": "1035509E"
+    }, {
+        "name": "ENREP",
+        "lat": "4.873",
+        "lon": "104.245",
+        "latdms": "045223N",
+        "londms": "1041442E"
+    }, {
+        "name": "UGPEK",
+        "lat": "3.613",
+        "lon": "104.131",
+        "latdms": "033647N",
+        "londms": "1040752E"
+    }, {
+        "name": "URIGO",
+        "lat": "3.418",
+        "lon": "104.113",
+        "latdms": "032505N",
+        "londms": "1040647E"
+    }, {
+        "name": "MANIM (WMFC/WSJC FIR BDRY)",
+        "lat": "3.242",
+        "lon": "104.098",
+        "latdms": "031431N",
+        "londms": "1040553E"
+    }, {
+        "name": "OBDAB",
+        "lat": "3.198",
+        "lon": "104.094",
+        "latdms": "031153N",
+        "londms": "1040538E"
+    }, {
+        "name": "PAPA UNIFORM DVOR/DME (PU)",
+        "lat": "1.423",
+        "lon": "103.933",
+        "latdms": "012523.99N",
+        "londms": "1035559.74E"
+    }]
+}, {
+    "name": "N892",
+    "segments": [{
+        "name": "MELAS (VVTS/WSJC FIR BDRY)",
+        "lat": "7.089",
+        "lon": "108.153",
+        "latdms": "070520N",
+        "londms": "1080911E"
+    }, {
+        "name": "MABLI",
+        "lat": "4.288",
+        "lon": "106.213",
+        "latdms": "041717N",
+        "londms": "1061247E"
+    }, {
+        "name": "MUMSO",
+        "lat": "3.739",
+        "lon": "105.537",
+        "latdms": "034420N",
+        "londms": "1053213E"
+    }, {
+        "name": "MABAL",
+        "lat": "3.474",
+        "lon": "105.210",
+        "latdms": "032826N",
+        "londms": "1051236E"
+    }, {
+        "name": "KILOT",
+        "lat": "3.038",
+        "lon": "104.673",
+        "latdms": "030217N",
+        "londms": "1044023E"
+    }, {
+        "name": "KIBOL WSJC/WMFC FIR BDRY",
+        "lat": "2.875",
+        "lon": "104.468",
+        "latdms": "025229N",
+        "londms": "1042805E"
+    }, {
+        "name": "PEKLA",
+        "lat": "2.577",
+        "lon": "104.105",
+        "latdms": "023437N",
+        "londms": "1040618E"
+    }, {
+        "name": "MERSING DVOR/DME (VMR)",
+        "lat": "2.388",
+        "lon": "103.872",
+        "latdms": "022318N",
+        "londms": "1035218E"
+    }]
+}, {
+    "name": "P501",
+    "segments": [{
+        "name": "ARAMA (50DME SJ)(delegated airspace BDRY)",
+        "lat": "1.615",
+        "lon": "103.120",
+        "latdms": "013654N",
+        "londms": "1030712E"
+    }, {
+        "name": "ANBUS (WMFC/WSJC FIR BDRY)",
+        "lat": "1.266",
+        "lon": "103.351",
+        "latdms": "011556N",
+        "londms": "1032102E"
+    }, {
+        "name": "BOBAG (R243/24 DME SJ)",
+        "lat": "1.042",
+        "lon": "103.498",
+        "latdms": "010230N",
+        "londms": "1032954E"
+    }, {
+        "name": "ANITO",
+        "lat": "-0.283",
+        "lon": "104.867",
+        "latdms": "001700S",
+        "londms": "1045200E"
+    }]
+}, {
+    "name": "Q801",
+    "segments": [{
+        "name": "ESPOB (VVTS/WSJC FIR BDRY)",
+        "lat": "7.000",
+        "lon": "105.555",
+        "latdms": "070000N",
+        "londms": "1053318E"
+    }, {
+        "name": "ESBUM",
+        "lat": "4.869",
+        "lon": "104.475",
+        "latdms": "045210N",
+        "londms": "1042830E"
+    }]
+}, {
+    "name": "Q802",
+    "segments": [{
+        "name": "IPRIX (VVTS/WSJC FIR BDRY)",
+        "lat": "7.000",
+        "lon": "104.132",
+        "latdms": "070000N",
+        "londms": "1040755E"
+    }, {
+        "name": "ESBUM",
+        "lat": "4.869",
+        "lon": "104.475",
+        "latdms": "045210N",
+        "londms": "1042830E"
+    }, {
+        "name": "ELALO",
+        "lat": "4.211",
+        "lon": "104.558",
+        "latdms": "041240N",
+        "londms": "1043329E"
+    }]
+}, {
+    "name": "Q803",
+    "segments": [{
+        "name": "UPRON",
+        "lat": "6.151",
+        "lon": "103.344",
+        "latdms": "060903.41N",
+        "londms": "1032039.98E"
+    }, {
+        "name": "IPDOL",
+        "lat": "4.853",
+        "lon": "103.989",
+        "latdms": "045111N",
+        "londms": "1035920E"
+    }, {
+        "name": "KEXOL",
+        "lat": "4.658",
+        "lon": "104.162",
+        "latdms": "043930N",
+        "londms": "1040942E"
+    }, {
+        "name": "ELALO",
+        "lat": "4.211",
+        "lon": "104.558",
+        "latdms": "041240N",
+        "londms": "1043329E"
+    }]
+}, {
+    "name": "T611",
+    "segments": [{
+        "name": "IPRIX (VVTS/WSJC FIR BDRY)",
+        "lat": "7.000",
+        "lon": "104.132",
+        "latdms": "070000N",
+        "londms": "1040755E"
+    }, {
+        "name": "IPDOL",
+        "lat": "4.853",
+        "lon": "103.989",
+        "latdms": "045111N",
+        "londms": "1035920E"
+    }, {
+        "name": "IDSEL (WMFC/WSJC FIR BDRY)",
+        "lat": "3.409",
+        "lon": "103.929",
+        "latdms": "032432N",
+        "londms": "1035544E"
+    }]
+}, {
+    "name": "T612",
+    "segments": [{
+        "name": "DOLOX",
+        "lat": "4.811",
+        "lon": "105.380",
+        "latdms": "044841N",
+        "londms": "1052247E"
+    }, {
+        "name": "IDSEL (WMFC/WSJC FIR BDRY)",
+        "lat": "3.409",
+        "lon": "103.929",
+        "latdms": "032432N",
+        "londms": "1035544E"
+    }]
+}, {
+    "name": "Y332",
+    "segments": [{
+        "name": "TAXUL (WSJC/WMFC FIR BDRY)",
+        "lat": "3.843",
+        "lon": "103.677",
+        "latdms": "035035N",
+        "londms": "1034037E"
+    }, {
+        "name": "PADLI",
+        "lat": "3.155",
+        "lon": "103.526",
+        "latdms": "030918N",
+        "londms": "1033133E"
+    }]
+}, {
+    "name": "Y333",
+    "segments": [{
+        "name": "BUVAL (WMFC/WSJC FIR BDRY)",
+        "lat": "3.606",
+        "lon": "103.728",
+        "latdms": "033622N",
+        "londms": "1034341E"
+    }, {
+        "name": "PADLI",
+        "lat": "3.155",
+        "lon": "103.526",
+        "latdms": "030918N",
+        "londms": "1033133E"
+    }]
+}, {
+    "name": "Y334",
+    "segments": [{
+        "name": "DOVOL (WSJC/WMFC FIR BDRY)",
+        "lat": "3.513",
+        "lon": "103.823",
+        "latdms": "033047N",
+        "londms": "1034923E"
+    }, {
+        "name": "PADLI",
+        "lat": "3.155",
+        "lon": "103.526",
+        "latdms": "030918N",
+        "londms": "1033133E"
+    }]
+}, {
+    "name": "Y335",
+    "segments": [{
+        "name": "IDSEL (WMFC/WSJC FIR BDRY)",
+        "lat": "3.409",
+        "lon": "103.929",
+        "latdms": "032432N",
+        "londms": "1035544E"
+    }, {
+        "name": "PADLI",
+        "lat": "3.155",
+        "lon": "103.526",
+        "latdms": "030918N",
+        "londms": "1033133E"
+    }]
+}, {
+    "name": "Y336",
+    "segments": [{
+        "name": "KETOD (WMFC/WSJC FIR BDRY)",
+        "lat": "3.178",
+        "lon": "104.162",
+        "latdms": "031042N",
+        "londms": "1040942E"
+    }, {
+        "name": "PADLI",
+        "lat": "3.155",
+        "lon": "103.526",
+        "latdms": "030918N",
+        "londms": "1033133E"
+    }]
+}, {
+    "name": "Y339",
+    "segments": [{
+        "name": "AKOMA (20 DME PU)",
+        "lat": "1.756",
+        "lon": "103.912",
+        "latdms": "014522N",
+        "londms": "1035443E"
+    }, {
+        "name": "AROSO",
+        "lat": "2.146",
+        "lon": "103.406",
+        "latdms": "020846N",
+        "londms": "1032421E"
+    }]
+}, {
+    "name": "Y342",
+    "segments": [{
+        "name": "JOHOR BAHRU DVOR/DME (VJB)",
+        "lat": "1.664",
+        "lon": "103.661",
+        "latdms": "013950.4N",
+        "londms": "1033939.2E"
+    }, {
+        "name": "AROSO",
+        "lat": "2.146",
+        "lon": "103.406",
+        "latdms": "020846N",
+        "londms": "1032421E"
+    }]
+}]
