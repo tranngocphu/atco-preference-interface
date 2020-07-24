@@ -141,22 +141,27 @@ def transformGenerateScenario(region,filename):
                 'dir_y': aircraftList[i].dir_y}}
             dict6.update(aircraftdict)    
 
-    data_dict={'waypoints':dict4, 'airways':dict5,'aircrafts':dict6, 
-        'sectors':{
-                    'sector1':{'type': 'secondary', 'boundary': l1[0]},
-                    'sector2':{'type': 'secondary', 'boundary': l1[1]},
-                    'sector3':{'type': 'secondary', 'boundary': l1[2]},
-                    'sector4':{'type': 'secondary', 'boundary': l1[3]},
-                    'sector5':{'type': 'secondary',  'boundary': l1[4]},
-                    'sector6':{'type': 'primary', 'boundary':  l1[5]},
-                    'sector7':{'type':'secondary', 'boundary': l1[6]},
-                    'sector8':{'type':'secondary' ,'boundary':l1[7]}
-                    }}
+        data_dict={'waypoints':dict4, 'airways':dict5,'aircrafts':dict6, 
+            'sectors':{
+                        'sector1':{'type': 'secondary', 'boundary': l1[0]},
+                        'sector2':{'type': 'secondary', 'boundary': l1[1]},
+                        'sector3':{'type': 'secondary', 'boundary': l1[2]},
+                        'sector4':{'type': 'secondary', 'boundary': l1[3]},
+                        'sector5':{'type': 'secondary',  'boundary': l1[4]},
+                        'sector6':{'type': 'primary', 'boundary':  l1[5]},
+                        'sector7':{'type':'secondary', 'boundary': l1[6]},
+                        'sector8':{'type':'secondary' ,'boundary':l1[7]}
+                        }}
 
+        l=  ['sector1','sector2','sector3','sector4','sector5','sector6','sector7','sector8']
+        for i in l:
+            if primarySector == i:
+                data_dict['sectors'][i]['type'] = 'primary'
+            else:
+                data_dict['sectors'][i]['type'] = 'secondary'
 
-    datalist.append(data_dict)    
+        datalist.append(data_dict)    
 
     with open(output_path+ str(filename)+'_Scenarios_withsectors' +'.json','w') as json_file2:
         json.dump(datalist, json_file2)
 
-    return json_file2
