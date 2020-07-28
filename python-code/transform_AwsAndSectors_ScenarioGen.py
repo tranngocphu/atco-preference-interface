@@ -1,4 +1,4 @@
-""" The following code will generate a json file with waypoints, airways and sectors. The inputs to be given are region(lon,lat,...) 
+""" The following code will generate a json file with waypoints, airways and sectors. The inputs to be given are region(lon,lat,lon,lat...) 
     and the name of the file based on the region. the files will be saved based on this filename to the 'output path'
 
 """
