@@ -67,7 +67,7 @@ class Airways:
 
 
 class Aircraft:
-   def __init__(self, name, start,end ,d):
+   def __init__(self, name, start,end ,route, d):
         """here route is the airway object and d is a random offset number"""
         # self.name = name
         # self.route = route.name
@@ -93,6 +93,7 @@ class Aircraft:
         self.start_wp_y = start.y
         self.end_wp_x   = end.x
         self.end_wp_y   = end.y
+        self.route = route
 
         self.start = np.array([self.start_wp_x,self.start_wp_y])
         self.end = np.array([self.end_wp_x, self.end_wp_y])
