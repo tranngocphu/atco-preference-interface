@@ -67,7 +67,7 @@ class Airways:
 
 
 class Aircraft:
-   def __init__(self, name, start,end ,route, d):
+   def __init__(self, name, start, end ,route, d):
         """here route is the airway object and d is a random offset number"""
         # self.name = name
         # self.route = route.name

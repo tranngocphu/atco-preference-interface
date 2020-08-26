@@ -53,12 +53,13 @@ def transformGenerateScenario(region,filename):
         dict3 ={"name":filteraws.name[i], 
             "segments":d1}
         dict1.append(dict3)
-
-    import json
-    with open(output_path+ str(filename)+'_Airways' +'.json', 'w') as json_file:
-        json.dump(dict1, json_file)
+    
+    # import json
+    # with open(output_path+ str(filename)+'_Airways' +'.json', 'w') as json_file:
+    #     json.dump(dict1, json_file)
 
     #second function starting, this is for sectors
+    df=pd.DataFrame(dict1)
     
     df2=pd.read_json('SgSectors_LonLat.json')
 
@@ -85,9 +86,9 @@ def transformGenerateScenario(region,filename):
 
     sectorpoints=[sectordict]
 
-    df= pd.read_json(output_path+ str(filename)+'_Airways' +'.json')
+    # df= pd.read_json(output_path+ str(filename)+'_Airways' +'.json')
     datalist=[]
-    for i in range(10):
+    for i in range(10): #for generating multiple scenario
         waypointList=[]
         for i in range(len(df)):
             for j in range(len(df.segments[i])):
